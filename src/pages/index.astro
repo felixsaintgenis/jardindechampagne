@@ -1,4 +1,5 @@
 ---
+// @ts-nocheck
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -11,17 +12,19 @@ const entries = await contentfulClient.getEntries<BlogPost>({
 });
 
 const posts = entries.items.map((item) => {
-  const { title, date, description, slug, listImage } = item.fields;
-  console.log(item.fields)
+  const { title, date, description, slug, listImage, content, horaires } = item.fields;
   return {
     title,
     slug,
     description,
 	listImage,
-    date: new Date(date).toLocaleDateString()
+    date: new Date(date).toLocaleDateString(),
+	content,
+	horaires
   };
 });
 ---
+
 
 <!doctype html>
 <html lang="en">
@@ -33,7 +36,8 @@ const posts = entries.items.map((item) => {
 		<main>
 			<h1 class="events-container-title">Au jardin ce mois-ci</h1>
 			<ul class="events-container">
-				{posts.map((post) => (
+				{posts.map((post) => {
+					return (
 				  <li class="event-item"
 				  style={{ backgroundImage: "url(" + post.listImage.fields.file.url + ")" }}
 				  >
@@ -43,7 +47,7 @@ const posts = entries.items.map((item) => {
 					<time>{post.date}</time>
 					<p>{post.description}</p>
 				  </li>
-				))}
+				)})}
 			  </ul>
 
 		</main>

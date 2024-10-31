@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import * as contentful from 'contentful'
 import type { EntryFieldTypes } from "contentful";
 
@@ -8,7 +10,9 @@ export interface BlogPost {
     content: EntryFieldTypes.RichText,
     date: EntryFieldTypes.Date,
     description: EntryFieldTypes.Text,
-    slug: EntryFieldTypes.Text
+    slug: EntryFieldTypes.Text,
+    listImage: EntryFieldTypes.AssetLink
+    horaires: EntryFieldTypes.Text
   }
 }
 
