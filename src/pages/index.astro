@@ -12,6 +12,7 @@ const entries = await contentfulClient.getEntries<BlogPost>({
 
 const posts = entries.items.map((item) => {
   const { title, date, description, slug, listImage } = item.fields;
+  console.log(item.fields)
   return {
     title,
     slug,
@@ -20,8 +21,6 @@ const posts = entries.items.map((item) => {
     date: new Date(date).toLocaleDateString()
   };
 });
-
-console.log('posts', posts[0].listImage)
 ---
 
 <!doctype html>
