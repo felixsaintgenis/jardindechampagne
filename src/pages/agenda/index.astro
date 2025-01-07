@@ -1,7 +1,7 @@
 ---
-import Layout from '../layouts/ContentPage.astro';
-import { contentfulClient } from "../lib/contentful";
-import type { TypeEventSkeleton, TypeArticleSkeleton } from "../lib/contentful";
+import Layout from '../../layouts/ContentPage.astro';
+import { contentfulClient } from "../../lib/contentful";
+import type { TypeEventSkeleton, TypeArticleSkeleton } from "../../lib/contentful";
 
 const eventEntries = await contentfulClient.withoutUnresolvableLinks.getEntries<TypeEventSkeleton>({
   content_type: "events",
@@ -59,11 +59,11 @@ const tags = ['tout', 'vente de légumes', 'repair café', 'cinéma', 'temps de 
                 class="event-item"
                 style={ post.coverImage && post.coverImage.fields && post.coverImage.fields.file ? { backgroundImage:'url(' + post.coverImage.fields.file.url + ')' } : {}}
                 >
-                    <a href={`/posts/${post.slug}/`}>
+                    <a href={`/agenda/${post.slug}/`}>
                     <h2 class="event-item-title">{post.title}</h2>
                     </a>
                     {/* <p>{post.shortDescription}</p> */}
-                    <button class="call-to-action event-button">Plus <br />d'informations</button>
+                    <a href={`/agenda/${post.slug}/`} class="call-to-action event-button">Plus <br />d'informations</a>
                 </li>
                 )})}
             </ul>
@@ -72,17 +72,10 @@ const tags = ['tout', 'vente de légumes', 'repair café', 'cinéma', 'temps de 
 </Layout>
 <style>
     .agenda-header-container {
-        background-image: url('agenda-header-picture.jpg');
+        background-image: url('/images/agenda-header-picture.jpg');
     }
-    .school-header-title {
-        color: #FFF6E5;
-        font-size: 50px;
-        width: 445px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
+    .header-title {
+        width: 800px;
     }
     .overlay {
         position: absolute;

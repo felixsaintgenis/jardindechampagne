@@ -18,7 +18,7 @@ import type { EntrySkeletonType } from "contentful";
 
 export interface TypeEventFields {
     title: EntryFieldTypes.Symbol;
-    body?: EntryFieldTypes.RichText;
+    body: EntryFieldTypes.RichText;
     dateHours?: EntryFieldTypes.Date;
     shortDescription?: EntryFieldTypes.Text;
     coverImage?: EntryFieldTypes.AssetLink;

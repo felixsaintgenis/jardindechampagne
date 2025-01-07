@@ -3,7 +3,7 @@ import Layout from '../layouts/ContentPage.astro';
 ---
 
 <Layout
-	title="Projet"
+	title="Jardin de Champagne | Projet"
 	description="Description du jardin de Champagne et de son historique"
 >
 	<div class="header-section project-header-container">
@@ -40,17 +40,17 @@ import Layout from '../layouts/ContentPage.astro';
     <section class="partners-container">
         <h3 class="partners-container-title">Nos partenaires</h3>
         <div class="partners-logo-container">
-            <div><img src="logo-champagne.png" alt=""></div>
-            <div><img src="logo-idf.png" alt=""></div>
-            <div><img src="logo-valdoise.png" alt=""></div>
-            <div><img src="logo-pnrvexin.png" alt=""></div>
+            <div><img src="/images/logo-champagne.png" alt=""></div>
+            <div><img src="/images/logo-idf.png" alt=""></div>
+            <div><img src="/images/logo-valdoise.png" alt=""></div>
+            <div><img src="/images/logo-pnrvexin.png" alt=""></div>
         </div>
 
     </section>
 </Layout>
 <style>
     .project-header-container {
-        background-image: url('project-header-picture.png');
+        background-image: url('/images/project-header-picture.png');
     }
     .overlay {
         position: absolute;
@@ -102,7 +102,7 @@ import Layout from '../layouts/ContentPage.astro';
         padding: 100px 0;
     }
     .history-container-right {
-        background-image: url('project-picture-one.png');
+        background-image: url('/images/project-picture-one.png');
         background-size: cover;
         width: 50%;
         height: auto;
@@ -215,7 +215,21 @@ import Layout from '../layouts/ContentPage.astro';
         .project-description-content {
             margin: auto;
         }
+        .associations-container {
+        margin-left: 30px;
     }
+    }
+    @media (min-width:1000px) and (max-width:1100px) {
+        .history-container-left {
+             margin-left: 30px;
+    }
+    .project-description-content-container {
+        margin-left: 30px;
+    }
+    .associations-container {
+        margin-left: 30px;
+    }
+}​
     @media (max-width: 790px) {
         .history-content {
             padding: 0;

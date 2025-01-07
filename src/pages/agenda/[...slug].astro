@@ -1,12 +1,12 @@
 ---
 import { contentfulClient } from "../../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
-import type { TypeArticleSkeleton } from "../../lib/contentful";
+import type { TypeEventSkeleton } from "../../lib/contentful";
 import Layout from '../../layouts/ContentPage.astro';
 
 export async function getStaticPaths() {
-  const { items } = await contentfulClient.withoutUnresolvableLinks.getEntries<TypeArticleSkeleton>({
-    content_type: "articles",
+  const { items } = await contentfulClient.withoutUnresolvableLinks.getEntries<TypeEventSkeleton>({
+    content_type: "events",
   });
   const pages = items.map((item) => ({
     params: { slug: item.fields.slug },

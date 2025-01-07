@@ -176,7 +176,7 @@ hr {
 .header-section {
 	width: 1300px;
 	position: relative;
-	background-image: url('jardindechampagne.jpg');
+	background-image: url('/images/jardindechampagne.jpg');
 	background-size: cover;
 	height: 700px;
 	margin: auto;
