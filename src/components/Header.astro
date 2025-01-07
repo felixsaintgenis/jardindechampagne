@@ -8,7 +8,7 @@ import HeaderLink from './HeaderLink.astro';
 		<span class="banner-divider">|</span>
 		<a href="mailto:bonjour@jardindechampagne.com" target="_blank" class="top-banner-link">bonjour@jardindechampagne.com</a>
 		<span class="banner-divider">|</span>
-		<p>Champagne-sur-Oise</p>
+		<a href="https://maps.app.goo.gl/zomz2xHwPTPFSrMA6" target="_blank" class="top-banner-link m-0">Champagne-sur-Oise</p>
 		<span class="banner-divider">|</span>
 		<div class="banner-social-links-container">
 			<a href="https://www.instagram.com/jardindechampagne/" target="_blank">
@@ -22,23 +22,35 @@ import HeaderLink from './HeaderLink.astro';
 			</a>
 		</div>
 	</div>
-	<div class="header-section">
 		<nav class="navigation-menu">
-			<h2><a href="/"><img src="/logo-jardindechampagne.png" class="header-logo" alt="logo - Jardin de Champagne"></a></h2>
-			<div class="navigation-links">
-				<HeaderLink href="/agenda" class="header-link">Agenda</HeaderLink>
-				<HeaderLink href="/" class="header-link">Participer</HeaderLink>
+			<h2><a href="/"><img src="logo-jardindechampagne.png" class="header-logo" alt="logo - Jardin de Champagne"></a></h2>
+			<ul class="navigation-links">
+				<li class="header-link"><a href="/agenda">Agenda</a></li>
+				<li class="header-link sub-menu">
+					<a href="#">Participer</a>
+					<ul class="subnavigation-menu">
+						<li class="subnavigation-item"><a href="/entreprises">Organiser un teambuilding</a></li>
+						<li class="subnavigation-item"><a href="/scolaires">Venir avec sa classe</a></li>
+						<li class="subnavigation-item"><a href="/benevoles">S'impliquer dans le projet</a></li>
+						<li class="subnavigation-item"><a href="/ventes">Venir aux ventes de légumes</a></li>
+						<li class="subnavigation-item"><a href="https://www.helloasso.com/associations/racines-de-demain">Faire un don</a></li>
+					</ul>
+				</li>
+				<li class="header-link"><a href="/projet">Projet</a></li>
+				<li class="header-link"><a href="/blog">Actualités</a></li>
+				<li class="header-link"><a href="/contact">Contact</a></li>
+				<!-- <HeaderLink href="/agenda" class="header-link">Agenda</HeaderLink>
+				<p class="header-link sub-menu">
+					Participer
+					<div class="subnavigation-menu">
+						<a href="/entreprises">Organiser un teambuilding</a>
+					</div>
+				</p>
 				<HeaderLink href="/projet" class="header-link">Projet</HeaderLink>
 				<HeaderLink href="/blog" class="header-link">Actualités</HeaderLink>
-				<HeaderLink href="/contact" class="header-link">Contact</HeaderLink>
-			</div>
+				<HeaderLink href="/contact" class="header-link">Contact</HeaderLink> -->
+			</ul>
 		</nav>
-		<h1 class="header-title">Tiers-lieu <br> écologique & social</h1>
-		<div class="call-to-action-container">
-			<button class="call-to-action">Découvrir <br>la programmation</button>
-			<button class="call-to-action">Commander <br>des légumes</button>
-		</div>
-	</div>
 </header>
 <style>
 .top-banner {
@@ -46,42 +58,65 @@ import HeaderLink from './HeaderLink.astro';
 	display: flex;
 	justify-content: end;
 	align-items: center;
-	width: 1300px;
+	width: 1100px;
 	margin: auto;
 	padding-top: 50px;
-	padding-right: 90px;
+	padding-right: 50px;
+  	padding-bottom: 15px;
 }	
-.header-section {
-	position: relative;
-	background-image: url('jardindechampagne.jpg');
-	background-size: cover;
-	width: 1300px;
-	height: 700px;
-	margin: auto;
-}
 .header-logo {
 	padding-top: 25px;
 	padding-left: 50px;
 }
+/* #header {
+	z-index: 1;
+} */
 .navigation-menu {
+	position: relative;
 	display: flex;
 	align-items: center;
  	justify-content: space-between;
+	width: 1100px;
+	margin: auto;
+	z-index: 1;
 }
 .header-link {
 	font-size: 22px;
-	color: #FFF6E5;
 	padding-right: 50px;
 }
 .header-link:hover {
-	color: #55735F;
+	text-decoration: underline;
 }
 .navigation-links {	
+	display: flex;
+	color: #FFF6E5;
+}
+.subnavigation-menu {
+  display: none;
+  position: absolute;
+  left: 48%;
+  background-color: #FFF6E5;
+  width: 300px;
+  z-index: 1;
+  padding: 20px;
+}
+.sub-menu:hover .subnavigation-menu {
+  display: block;
+}
+.subnavigation-item {
+	font-size: 18px;
+	font-weight: 400;
+	color: #000000;
+}
+.subnavigation-item:hover {
+	text-decoration: underline;
 }
 .banner-divider {
 	padding: 0 10px;
 }
-.banner-social-icons-container {
+.banner-social-links-container {
+	display: flex;
+	align-items: center;
 }
 .banner-instagram-icon {
 	width: 21px;
@@ -96,44 +131,21 @@ import HeaderLink from './HeaderLink.astro';
 .top-banner-link:hover {
 	text-decoration: underline;
 }
-.header-title {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	text-align: center;
-	color: #FFF6E5;
-	font-size: 55px;
-	font-weight: 600;
+@media (max-width: 1300px) {
+	.top-banner {
+	width: 100%;
+	padding-right: 0px;
+}	
 }
-.call-to-action-container {
-	position: absolute;
-	top: 70%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+@media (max-width: 1100px) {
+	.header-section {
+		display: none;
+	}
+	.top-banner {
+		display: none;
+	}
+	.navigation-menu {
+		display: none;
+	}
 }
-.call-to-action {
-	background-color:transparent;
-	border-radius:1px;
-	border:1px solid #FFFFFF;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:20px;
-	padding:6px 0px;
-	margin: 10px;
-	text-decoration:none;
-	width: 230px;
-}
-.call-to-action:hover {
-	background-color:#55735F;
-	opacity: 80%;
-}
-.call-to-action:active {
-	position:relative;
-	top:1px;
-}
-
-
 </style>

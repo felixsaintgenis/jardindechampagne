@@ -1,0 +1,146 @@
+---
+import Layout from '../layouts/ContentPage.astro';
+---
+
+<Layout
+	title="Scolaires"
+	description="Services aux écoles et aux scolaires du Jardin de Champagne"
+>
+<div class="school-header-container">
+    <h1 class="school-header-title">La pédagogie par la pratique</h1>
+    <a class="call-to-action">Découvrir nos activités</a>
+</div>
+<section class="school-services-container">
+    <h3 class="school-services-container-title">De la maternel au lycée</h3>
+    <p class="school-services-content">Nous intervenons auprès d’enfants de tous âges afin de sensibiliser ces futurs adultes à une alimentation saine et respecteuse de l’environnement.</p>
+    <p class="school-services-content">Toutes nos animations reposent sur la pratique et  implique systématiquement le personnel pédagogique afin de répondre au mieux à leurs besoins et à leurs envies.</p>
+</section>
+<section class="company-workshop">
+    <div class="company-workshop-container">
+        <div class="kitchen-workshop">
+            <h4 class="workshop-title">Demi-journée immersion </h4>
+            <div class="kitchen-picture"></div>
+            <p class="">Une aventure au cœur de la nature pour petits et grands enfants ! Découverte des plantes potagères, observation de la faune du jardin et ateliers ludiques pour maîtriser les gestes de base du maraîcher. Un moment idéal pour éveiller leur curiosité et les sensibiliser à l’environnement.</p>
+        </div>
+        <div class="market-workshop">
+            <h4 class="workshop-title">Cultiver avec la nature</h4>
+            <div class="gardening-picture"></div>
+            <p>Un programme sur plusieurs semaines pour apprendre à cultiver en harmonie avec la nature. Les enfants découvriront les bases du jardinage écologique, participeront à des ateliers pratiques et suivront l’évolution de leurs plantations au fil des saisons.</p>
+        </div>
+    </div>
+</section>
+<div class="call-to-action-container">
+    <a class="call-to-action-black" href="">Demander un devis</a>
+    <a class="call-to-action-black" href="">Découvrir notre plaquette</a>
+</div>
+</Layout>
+<style>
+    .school-header-container {
+        position: relative;
+		height: 700px;
+        margin-top: -140px;
+        background-image: url('school-header-picture.png');
+        background-size: cover;
+    }
+    .school-header-title {
+        color: #FFF6E5;
+        font-size: 50px;
+        width: 445px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+    .call-to-action {
+        background-color:transparent;
+        border-radius:1px;
+        border:1px solid #FFFFFF;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Arial;
+        font-size:20px;
+        padding:15px 0px;
+        margin: 10px;
+        text-decoration:none;
+        width: 150px;
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+    .call-to-action-black {
+        background-color:transparent;
+        border-radius:1px;
+        border:1px solid #000000;
+        display:inline-block;
+        cursor:pointer;
+        color:#000000;
+        font-family:Arial;
+        font-size:20px;
+        padding:15px 0px;
+        margin: 10px;
+        text-decoration:none;
+        width: 150px;
+        text-align: center;
+    }
+    .school-services-container {
+        margin-top: 100px;
+    }
+    .school-services-container-title {
+        font-size: 40px;
+        font-weight: 300;
+        width: 400px;
+    }
+    .school-services-content {
+        width: 600px;
+    }
+    .company-workshop-container {
+        display: flex;
+        margin-top: 100px;
+    }
+    .workshop-title {
+        font-size: 40px;
+        font-weight: 400;
+    }
+    .kitchen-workshop {
+        margin-right: 30px;
+        width: 50%;
+    }
+    .market-workshop {
+        margin-left: 30px;
+        width: 50%;
+    }
+    .kitchen-picture {
+        width: 100%;
+        height: 500px;
+        background-image: url('school-photo-1.png');
+        background-size: cover;
+        margin-bottom: 50px;
+    }
+    .gardening-picture {
+        width: 100%;
+        height: 500px;
+        background-image: url('school-photo-2.png');
+        background-size: cover;
+        margin-bottom: 50px;
+    }
+    .call-to-action-container {
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @media (max-width: 1100px) {
+		.school-header-container {
+			width: 100%;
+		}
+
+		.footer-section {
+			width: 50%;
+		}
+}
+</style>

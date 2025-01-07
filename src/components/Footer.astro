@@ -9,6 +9,7 @@ const today = new Date();
 			<li class="footer-navigation-link"><a href="/">Accueil</a></li>
 			<li class="footer-navigation-link"><a href="/agenda">Agenda</a></li>
 			<li class="footer-navigation-link"><a href="/projet">Projet</a></li>
+			<li class="footer-navigation-link"><a href="/entreprises">Entreprises</a></li>
 			<li class="footer-navigation-link"><a href="/blog">Actualités</a></li>
 		</ul>
 	</div>
@@ -16,9 +17,11 @@ const today = new Date();
 		<p class="footer-section-title">Adresse</p>
 		<p class="footer-section-text">36 Chemin du Halage</p>
 		<p class="footer-section-text">95660 - Champagne-sur-Oise</p>
-		<a href="https://maps.app.goo.gl/zomz2xHwPTPFSrMA6" target="_blank">
-			<img src="/map.svg" alt="map icon" class="footer-map-icon">
-		</a>
+		<div class="footer-section-map-link-container">
+			<a href="https://maps.app.goo.gl/zomz2xHwPTPFSrMA6" target="_blank">
+				<img src="/map.svg" alt="map icon" class="footer-map-icon">
+			</a>
+		</div>
 	</div>
 	<div class="footer-section">
 		<p class="footer-section-title">Contact</p>
@@ -47,14 +50,16 @@ const today = new Date();
 <style>
 	footer {
 		display: flex;
-		justify-content: space-between;
+		flex-wrap: wrap;
 		padding-top: 50px;
+		padding-bottom: 30px;
 		border-top: solid black 1px;
 		width: 1200px;
 		margin: auto;
 	}
 	.footer-section {
-		flex: 1 1 0;
+		width: 25%;
+		text-align: left;
 	}
 	.footer-navigation-list {
 		padding-left: 0;
@@ -93,7 +98,12 @@ const today = new Date();
 		width: 15px;
   		margin-left: -2px;
 	}
+	.footer-section-map-link-container {
+		display: flex;
+	}
 	.footer-social-icons-container {
+		display: flex;
+		align-items: center;
 		margin-left: -3px;
 	}
 	.footer-instagram-icon {
@@ -106,4 +116,34 @@ const today = new Date();
 	.footer-linkedin-icon {
 		width: 19px;
 	}
+
+	@media (max-width: 1300px) {
+		footer {
+			width: 100%;
+			padding: 30px 30px;
+		}
+
+		/* .footer-section {
+			width: 50%;
+		} */
+}
+@media (max-width: 1000px) {
+		.footer-section {
+			width: 50%;
+			margin-top: 20px;
+		}
+}
+@media (max-width: 790px) {
+		.footer-section {
+			width: 100%;
+			margin-top: 30px;
+			text-align: center;
+		}
+		.footer-section-map-link-container {
+			justify-content: center;
+		}
+		.footer-social-icons-container {
+			justify-content: center;
+		}
+}
 </style>

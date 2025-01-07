@@ -1,0 +1,251 @@
+---
+import Layout from '../layouts/ContentPage.astro';
+---
+
+<Layout
+	title="Projet"
+	description="Description du jardin de Champagne et de son historique"
+>
+	<div class="header-section project-header-container">
+        <div class="overlay"></div>
+        <h1 class="header-title">Faire vivre un lieu écologique & social accessible à tous</h1>
+        <a class="call-to-action">Agenda</a>
+    </div>
+    <section class="history-container">
+        <div class="history-container-left">
+            <h3 class="history-content-title">Lieu pour et avec les gens</h3>
+            <p class="history-content">Fondé en 2021 par Racines de Demain, le Jardin de Chamagne - désormais transformé en tiers lieu - à pour objectif de proposer un lieu écologique et social accessible à toutes et tous.</p>
+            <p class="history-content">Tout au long de l’année, des événements, des activités manuelles et culturelles, un café associatif ainsi que la vente de fruits & légumes bio sont proposés.</p>
+            <a class="history-call-to-action">Agenda</a>
+        </div>
+        <div class="history-container-right"></div>
+    </section>
+    <section class="project-description-container">
+        <div class="project-description-content-container">
+            <h3 class="project-description-title">5000M2 en pleine nature</h3>
+            <p class="project-description-content">Mis à disposition par la municipalité, le jardin s'étend sur un demi-hectare et comprend 90 planches de culture, une pépinière, une serre, quatre conteneurs aménagés, une scène et une terrasse. Situé sur les berges de l'Oise, cet espace invite à l'évasion et fait presque oublier qu'il se trouve en Île-de-France.</p>
+        </div>
+        <div class="project-description-image"></div>
+    </section>
+    <section class="associations-container">
+        <h3 class="associations-container-title">4 associations complémentaires</h3>
+        <p class="associations-container-subtitle">L’ensemble de la vie du Jardin repose sur le travail de 4 associations locales et complémentaires</p>
+        <div class="associations-description-container">
+            <div><p class="associations-description-content-left">Café-asso La Cabane, une association née en 2017, ayant pour objectif de promouvoir le vivre-ensemble, la solidarité, la transmission de savoirs,valoriser les acteurs locaux et l’économie responsable.</p></div>
+            <div><p class="associations-description-content-right">Racines de Demain, à l’origine du projet, une association née en 2019, ayant pour objectif d’accompagner les citoyens dans la transition écologique à travers de nouveaux récits.</p></div>
+            <div><p class="associations-description-content-left">La Vallée des Utopies, une association née en 2010, ayant pour but de réunir des personnes souhaitant participer au développement solidaire local par la culture.</p></div>
+            <div><p class="associations-description-content-right">Unis Vers Écolo, une association née en 2021, ayant pour objet de faire vivre l'écologie sur Champagne-sur-Oise et ses alentours.</p></div>
+        </div>
+    </section>
+    <section class="partners-container">
+        <h3 class="partners-container-title">Nos partenaires</h3>
+        <div class="partners-logo-container">
+            <div><img src="logo-champagne.png" alt=""></div>
+            <div><img src="logo-idf.png" alt=""></div>
+            <div><img src="logo-valdoise.png" alt=""></div>
+            <div><img src="logo-pnrvexin.png" alt=""></div>
+        </div>
+
+    </section>
+</Layout>
+<style>
+    .project-header-container {
+        background-image: url('project-header-picture.png');
+    }
+    .overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #000000;
+        opacity: 20%;
+    }
+    .project-header-title {
+        color: #FFF6E5;
+        font-size: 50px;
+        width: 445px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+    .call-to-action {
+        background-color:transparent;
+        border-radius:1px;
+        border:1px solid #FFFFFF;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Arial;
+        font-size:20px;
+        padding:15px 0px;
+        margin: 10px;
+        text-decoration:none;
+        width: 150px;
+        text-align: center;
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+    .history-container {
+        display: flex;
+        margin-top: 100px;
+    }
+    .history-container-left {
+        position: relative;
+        width: 50%;
+        margin-right: 50px;
+        display: flex;
+        flex-direction: column;
+        padding: 100px 0;
+    }
+    .history-container-right {
+        background-image: url('project-picture-one.png');
+        background-size: cover;
+        width: 50%;
+        height: auto;
+        margin-left: 50px;
+    }
+    .history-content-title {
+        font-size: 40px;
+        font-weight: 300;
+    }
+    .history-call-to-action {
+        align-self: center;
+        margin-top: 50px;
+        border-radius:1px;
+        border:1px solid #000;
+        display:inline-block;
+        cursor:pointer;
+        color:#000;
+        font-family:Arial;
+        font-size:20px;
+        padding:15px 0px;
+        text-decoration:none;
+        width: 150px;
+        text-align: center;
+    }
+    .project-description-container {
+        margin-top: 100px;
+    }
+    .project-description-title {
+        font-size: 40px;
+        font-weight: 300;
+    }
+    .project-description-image {
+        height: 600px;
+        background-color: #55735F;
+        margin-top: 50px;
+    }
+    .project-description-content {
+        width: 600px;
+    }
+    .associations-container {
+        margin-top: 100px;
+    }
+    .associations-container-title {
+        font-size: 40px;
+        font-weight: 300;
+        width: 300px;
+    }
+    .associations-container-subtitle {
+        width: 500px;
+    }
+    .associations-description-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .associations-description-container > div {
+        flex: 50%;
+    }
+    .associations-description-content-left {
+        padding-right: 50px;
+    }
+    .associations-description-content-right {
+        padding-left: 50px;
+    }
+    .partners-container {
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+    .partners-container-title {
+        font-size: 50px;
+        font-weight: 300;
+    }
+    .partners-logo-container {
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+
+    @media (max-width: 1000px) {
+        .history-container {
+        display: flex;
+        flex-direction: column;
+        }
+        .history-container-left {
+            position: relative;
+            width: 100%;
+            padding: 30px;
+            text-align: center;
+        }
+        .history-container-right {
+            width: 100%;
+            height: 400px;
+        }
+        .history-content {
+            padding: 0 30px;
+        }
+        .history-content-title {
+            margin-bottom: 20px;
+        }
+        .history-container-right {
+            height: 400px;
+            margin-left: 0;
+            background-position: center;
+        }
+        .project-description-content-container {
+            text-align: center;
+        }
+        .project-description-content {
+            margin: auto;
+        }
+    }
+    @media (max-width: 790px) {
+        .history-content {
+            padding: 0;
+        }
+	.project-header-title {
+		font-size: 38px;
+    }  	
+    .project-description-content {
+            width: 100%;
+            padding: 0 20px;
+        }
+        .history-container {
+            margin-top: 30px;
+        }
+        .history-container-left {
+            padding: 20px;
+        }	   	
+}   
+@media (max-width: 390px) {
+	.call-to-action-container {
+		width: 190px;
+	}
+	.project-header-title {
+		width: 355px;
+}
+.history-content-title {
+    font-size: 30px;
+}
+.project-description-title {
+    font-size: 30px;
+}   		
+    }   
+</style>

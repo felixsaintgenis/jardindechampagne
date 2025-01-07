@@ -1,28 +1,47 @@
 ---
-// @ts-nocheck
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { contentfulClient } from "../lib/contentful";
-import type { BlogPost } from "../lib/contentful";
+import type { TypeEventSkeleton, TypeArticleSkeleton } from "../lib/contentful";
 
-const entries = await contentfulClient.getEntries<BlogPost>({
-  content_type: "blogPost",
+const eventEntries = await contentfulClient.withoutUnresolvableLinks.getEntries<TypeEventSkeleton>({
+  content_type: "events",
 });
 
-const posts = entries.items.map((item) => {
-  const { title, date, description, slug, listImage, content, horaires } = item.fields;
+const events = eventEntries.items.map((item) => {
+  const { title, dateHours, shortDescription, coverImage, slug, body, type } = item.fields;
   return {
     title,
+	dateHours,
+	shortDescription,
+	coverImage,
+	body,
     slug,
-    description,
-	listImage,
-    date: new Date(date).toLocaleDateString(),
-	content,
-	horaires
+	type
   };
 });
+
+const eventsToDisplay = events.slice(0,4)
+
+const articlesEntries = await contentfulClient.withoutUnresolvableLinks.getEntries<TypeArticleSkeleton>({
+  content_type: "articles",
+});
+
+const articles = articlesEntries.items.map((item) => {
+  const { title, date, tags, coverImage, slug, body } = item.fields;
+  return {
+    title,
+	date,
+	tags,
+	coverImage,
+	body,
+    slug,
+  };
+});
+
+const articlesToDisplay = articles.slice(0,4)
 ---
 
 
@@ -33,43 +52,126 @@ const posts = entries.items.map((item) => {
 	</head>
 	<body>
 		<Header />
+		<div class="header-section">
+			<h1 class="header-title">Tiers-lieu <br> écologique & social</h1>
+			<div class="call-to-action-container">
+				<a href="/agenda" class="call-to-action index-button">Découvrir <br>la programmation</button>
+				<a href="https://commande.kuupanda.com/producteur/5740/particulier" target="_blank" class="call-to-action index-button">Commander <br>des légumes</a>
+			</div>
+		</div>
 		<main>
-			<h1 class="events-container-title">Au jardin ce mois-ci</h1>
-			<ul class="events-container">
-				{posts.map((post) => {
-					return (
-				  <li class="event-item"
-				  style={{ backgroundImage: "url(" + post.listImage.fields.file.url + ")" }}
-				  >
-					<a href={`/posts/${post.slug}/`}>
-					  <h2 class="event-item-title">{post.title}</h2>
-					</a>
-					<time>{post.date}</time>
-					<p>{post.description}</p>
-				  </li>
-				)})}
-			  </ul>
-
+			<section class="events-container">
+				<h3 class="events-container-title">Au jardin <br /> ce mois-ci</h3>
+					<ul class="events-list">
+						{eventsToDisplay.map((post) => {
+							return (
+						<li 
+						class="event-item"
+						style={ post.coverImage && post.coverImage.fields && post.coverImage.fields.file ? { backgroundImage:'url(' + post.coverImage.fields.file.url + ')' } : {}}
+						>
+							<div class="overlay"></div>
+							<a href={`/posts/${post.slug}/`}>
+							<h2 class="event-item-title">{post.title}</h2>
+							</a>
+							{/* <p>{post.shortDescription}</p> */}
+							<button class="call-to-action event-button">Plus <br />d'informations</button>
+						</li>
+						)})}
+					</ul>
+					<div class="all-events-button-container">
+						<a href="/agenda" class="call-to-action all-events-button">Toute la <br /> programmation</a>
+					</div>
+			</section>
+				<section class="market-sales-container">
+					<div class="market-sale-picture-left">
+					</div>
+					<div class="market-sales-content-right">
+						<div class="market-sales-content-container">
+							<p class="market-sales-content">Nos ventes de légumes bio & accessibles</p>
+							<div class="market-sales-buttons-container">
+								<a href="/ventes" class="market-sales-button">Marchés</a>
+								<a href="https://commande.kuupanda.com/producteur/5740/particulier" target="_blank" class="market-sales-button">En ligne</a>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="project-container">
+					<div class="project-content-container">
+						<p class="project-content">Un lieu pour & avec les gens</p>
+						<button class="project-button"><a href="/projet">Découvrir le projet</a></button>
+					</div>
+				</section>
+				<section class="participation-section">
+					<h3 class="participation-title">Participer à la vie du lieu</h3>
+					<div class="masonry-container">
+						<div class="masonry-left"><a href="/entreprises">Pour les entreprises</a></div>
+						<div class="masonry-right">
+							<div class="masonry-right-top"><a href="/scolaires">Pour la jeunesse</a></div>
+							<div class="masonry-right-bottom">
+								<div class="masonry-right-bottom-left"><a href="/benevoles">Devenir bénévole</a></div>
+								<div class="masonry-right-bottom-right"><a href="https://www.helloasso.com/associations/racines-de-demain" target="_blank">Faire un don</a></div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="events-container">
+					<h3 class="events-container-title">Les actualités <br />du jardin</h3>
+						<ul class="events-list">
+							{articlesToDisplay.map((post) => {
+								return (
+							<li 
+							class="event-item"
+							style={ post.coverImage && post.coverImage.fields && post.coverImage.fields.file ? { backgroundImage:'url(' + post.coverImage.fields.file.url + ')' } : {}}
+							>
+								<div class="overlay"></div>
+								<a href={`/posts/${post.slug}/`}>
+								<h2 class="event-item-title">{post.title}</h2>
+								</a>
+								{/* <p>{post.shortDescription}</p> */}
+								<button class="call-to-action event-button">Plus <br />d'informations</button>
+							</li>
+							)})}
+						</ul>
+						<div class="all-events-button-container">
+							<button class="call-to-action all-events-button">Toutes nos <br /> actualités</button>
+						</div>
+				</section>
 		</main>
 		<Footer />
 	</body>
 </html>
 
 <style>
+.index-button {
+	color: #FFF6E5;
+}
 	.events-container {
+		margin-top: 100px;
+		padding-bottom: 150px;
+	}
+	.events-list {
 		display: flex;
-		justify-content: center;
+		flex-wrap: wrap;
+		justify-content: flex-start;
 		padding: 0;
+		gap: 30px;
 	}
 	.event-item {
-		width: 400px;
-		height: 600px;
+		position: relative;
+		width: 23.2%;
+		height: 500px;
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
-		margin-right: 40px;
 		list-style-type: none;
 		position: relative;
+	}
+	.overlay {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: #000000;
+		opacity: 20%;
 	}
 	.event-item-title {
 		position: absolute;
@@ -82,7 +184,320 @@ const posts = entries.items.map((item) => {
 		font-weight: 400;
 	}
 	.events-container-title {
-		font-size: 50px;
-		font-weight: 500;
+		font-size: 40px;
+		font-weight: 300;
 	}
+	.event-button {
+		position: absolute;
+		top: 80%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+.all-events-button-container {
+	position: relative;
+}
+.all-events-button {
+	color: #000000;
+	border:1px solid #000000;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	margin-top: 50px;
+}
+.all-events-button:hover {
+	border:2px solid #000000;
+}
+.market-sales-container {
+	display: flex;
+	height: 600px;
+}
+.market-sale-picture-left {
+	width: 50%;
+	background-image: url('market-sales-picture.png');
+	background-size: cover;
+}
+.market-sales-content-right {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 50%;
+}
+.market-sales-content-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.market-sales-content {
+	font-size: 50px;
+	width: 510px;
+	text-align: center;
+}
+.market-sales-button {
+	background-color:transparent;
+	border-radius:1px;
+	display:inline-block;
+	cursor:pointer;
+	font-family:Arial;
+	font-size:20px;
+	padding:6px 0px;
+	margin: 10px;
+	text-decoration:none;
+	width: 230px;
+	color: #000000;
+	border:1px solid #000000;
+	text-align: center;
+}
+.market-sales-button:hover {
+	border:2px solid #000000;
+}
+.project-container {
+	position: relative;
+	background-image: url('project-picture.png');
+	background-size: cover;
+	width: 100%;
+	height: 600px;
+	margin-top: 100px;
+}
+.project-content-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: absolute;
+	top: 80%;
+	left: 80%;
+	-ms-transform: translate(-50%, -60%);
+	transform: translate(-50%, -60%);
+}
+.project-content {
+	font-size: 50px;
+	color: #FFF6E5;
+	font-weight: 500;
+	width: 310px;
+	margin: 0;
+}
+.project-button {
+	background-color:transparent;
+	border-radius:1px;
+	border:1px solid #FFF6E5;
+	display:inline-block;
+	cursor:pointer;
+	color:#FFF6E5;
+	font-family:Arial;
+	font-size:20px;
+	padding:6px 0px;
+	margin: 10px;
+	text-decoration:none;
+	width: 160px;
+	margin-top: 20px;
+}
+.project-button:hover {
+	border:2px solid #FFF6E5;
+}
+.participation-section {
+	margin-top: 100px;
+}
+.participation-title {
+		font-size: 40px;
+		font-weight: 300;
+		width: 290px;
+	}
+.masonry-container {
+	display: flex;
+	width: 100%;
+	height: 600px;
+	margin-top: 20px;
+}
+.masonry-container a:hover {
+	text-decoration: underline;
+}
+.masonry-left {
+	display: flex;
+	justify-content: center;
+  	align-items: center;
+	width: 50%;
+	background-color: #55735F;
+	margin-right: 20px;
+	color: #FFF6E5;
+	font-size: 30px;
+}
+.masonry-right {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	margin-left: 20px;
+}
+.masonry-right-top {
+	display: flex;
+	justify-content: center;
+  	align-items: center;
+	color: #FFF6E5;
+	font-size: 30px;
+	height: 300px;
+	margin-bottom: 20px;
+	background-color: #7FA267;
+}
+.masonry-right-bottom {
+	display: flex;
+	height: 300px;
+	margin-top: 20px;
+}
+.masonry-right-bottom-left {
+	display: flex;
+	justify-content: center;
+  	align-items: center;
+	color: #FFF6E5;
+	font-size: 20px;
+	width: 50%;
+	margin-right: 20px;
+	background-color: #7FA267;
+}
+.masonry-right-bottom-right {
+	display: flex;
+	justify-content: center;
+  	align-items: center;
+	color: #FFF6E5;
+	font-size: 20px;
+	width: 50%;
+	margin-left: 20px;
+	background-color: #55735F;
+}
+.blog-section {
+	margin-top: 100px;
+}
+.blog-title {
+	font-size: 50px;
+	font-weight: 300;
+	width: 290px;
+}
+
+@media (max-width: 1300px) {
+	.event-item {
+			width: 48%;
+			height: 500px;
+		}
+	.masonry-container {
+		display: flex;
+		flex-direction: column;
+}
+	.masonry-left {
+		width: 100%;
+		height: 300px;
+	}
+	.masonry-right {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		height: 300px;
+		margin-top: 20px;
+		margin-left: 0;
+	}
+	.masonry-right-top {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: #FFF6E5;
+		font-size: 30px;
+		height: 300px;
+		margin-bottom: 20px;
+		background-color: #7FA267;
+	}
+	.masonry-right-bottom {
+		display: flex;
+		height: 300px;
+		margin-top: 20px;
+	}
+}
+
+@media (max-width: 1100px) {
+		.market-sales-container {
+			flex-direction: column;
+			height: 700px;
+		}
+		.market-sales-container {
+			width: 100%;
+		}
+		.market-sale-picture-left {
+			width: 100%;
+			height: 350px;
+		}
+		.market-sales-content-right {
+			position: relative;
+			width: 100%;
+			height: 350px;
+		}
+		.project-content-container {
+			left: 75%;
+		}
+    }  
+
+@media (max-width: 1000px) {
+        .history-container {
+        display: flex;
+        flex-direction: column;
+        }
+        .history-container-left {
+            position: relative;
+            width: 100%;
+        }
+        .history-container-right {
+            width: 100%;
+            height: 400px;
+        }
+    }    	
+
+@media (max-width: 790px) {
+	.event-item {
+		width: 45.8%;
+		height: 200px;
+		}
+	.event-item-title {
+		font-size: 20px;
+	}
+	.event-button {
+		font-size:12px;
+		padding:2px 0px;
+		margin: 0;
+		width: 120px;
+	}
+	.market-sales-content {
+		font-size: 25px;
+  		width: 280px;
+	}
+	.market-sales-buttons-container {
+		width: 250px;
+		margin: auto;
+	}
+	.project-content-container {
+			left: 70%;
+		}
+	.header-title {
+		font-size: 38px;
+}
+	.project-content-container {
+		top: 50%;
+		left: 50%;
+}
+	.masonry-right-bottom-right {
+		margin-left: 0;
+	}
+	.masonry-right-bottom-left {
+		margin-right: 0;
+	}	   		   	
+    }   
+@media (max-width: 390px) {
+	.event-item {
+		width: 45.3%;
+		height: 200px;
+		}
+	.call-to-action-container {
+		width: 190px;
+	}
+	.header-title {
+		width: 355px;
+}	   		
+    }
 </style>

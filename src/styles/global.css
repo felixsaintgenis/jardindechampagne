@@ -22,13 +22,13 @@
 	font-style: normal;
 	font-display: swap;
 }
-@font-face {
+/* @font-face {
 	font-family: 'Inter-italic';
 	src: url('/fonts/atkinson-bold.woff') format('woff');
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
-}
+} */
 body {
 	font-family: 'Inter', sans-serif;
   	font-optical-sizing: auto;
@@ -43,9 +43,7 @@ body {
 }
 main {
 	width: 1300px;
-	max-width: calc(100% - 2em);
 	margin: auto;
-	padding: 3em 1em;
 }
 h1,
 h2,
@@ -130,12 +128,28 @@ hr {
 	border: none;
 	border-top: 1px solid rgb(var(--gray-light));
 }
+
+.title {
+	font-size: 40px;
+	font-weight: 300;
+}
+
+@media (max-width: 1300px) {
+	main {
+		width: 95%;
+		margin: auto;
+	}
+}
+
+@media (max-width: 1100px) {
+	main {
+		width: 100%;
+	}
+}
+
 @media (max-width: 720px) {
 	body {
 		font-size: 18px;
-	}
-	main {
-		padding: 1em;
 	}
 }
 
@@ -156,3 +170,83 @@ hr {
 	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
 }
+
+/* Style for header sections  */
+
+.header-section {
+	width: 1300px;
+	position: relative;
+	background-image: url('jardindechampagne.jpg');
+	background-size: cover;
+	height: 700px;
+	margin: auto;
+	margin-top: -140px;
+}
+
+.header-title {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 480px;
+	text-align: center;
+	color: #FFF6E5;
+	font-size: 55px;
+	font-weight: 600;
+}
+.call-to-action-container {
+	position: absolute;
+	top: 70%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 506px;
+	margin: auto;
+}
+.call-to-action {
+	background-color:transparent;
+	border-radius:1px;
+	border:1px solid #FFFFFF;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	padding:6px 0px;
+	margin: 10px;
+	text-decoration:none;
+	width: 230px;
+	text-align: center;
+}
+.call-to-action:hover {
+	border:2px solid #FFFFFF;
+}
+@media (max-width: 1300px) {
+	.header-section {
+		width: 100%;
+	}
+}
+@media (max-width: 1100px) {
+	.call-to-action-container {
+		width: 386px;
+		margin: auto;
+}
+	.call-to-action {
+		font-size: 17px;
+		padding: 4px 0px;
+		width: 170px;
+	}
+}  
+
+@media (max-width: 790px) {
+	.header-title {
+		font-size: 38px;
+}   		   	
+    }   
+@media (max-width: 390px) {
+	.call-to-action-container {
+		width: 190px;
+	}
+	.header-title {
+		width: 355px;
+}	   		
+    }

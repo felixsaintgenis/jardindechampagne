@@ -1,0 +1,212 @@
+---
+import Layout from '../layouts/ContentPage.astro';
+import Accordeon from '../components/Accordeon.astro';
+---
+
+<Layout
+	title="Contact"
+	description="Page contact du Jardin de Champagne."
+>
+<div class="header-section contact-header-container">
+    <h1 class="header-title">Contact</h1>
+</div>
+<div class="contact-info-container">
+    <div class="footer-section">
+        <p class="footer-section-title">Adresse</p>
+        <p class="footer-section-text">36 Chemin du Halage</p>
+        <p class="footer-section-text">95660 - Champagne-sur-Oise</p>
+        <a href="https://maps.app.goo.gl/zomz2xHwPTPFSrMA6" target="_blank">
+            <img src="/map.svg" alt="map icon" class="footer-map-icon">
+        </a>
+    </div>
+    <div class="footer-section">
+        <p class="footer-section-title">Contact</p>
+        <p class="footer-section-text">bonjour@jardindechampagne.com</p>
+        <p class="footer-section-text">07.62.64.97.87</p>
+        <div class="footer-social-icons-container">
+            <a href="https://www.instagram.com/jardindechampagne/" target="_blank">
+                <img src="/instagram.svg" alt="map icon" class="footer-instagram-icon">
+            </a>
+            <a href="https://www.facebook.com/jardindechampagne/" target="_blank">
+                <img src="/facebook.svg" alt="map icon" class="footer-facebook-icon">
+            </a>
+            <a href="https://fr.linkedin.com/company/jardin-p%C3%A9dagogique-de-champagne" target="_blank">
+                <img src="/linkedin.svg" alt="map icon" class="footer-linkedin-icon">
+            </a>
+        </div>
+    </div>
+    <div class="footer-section">
+        <p class="footer-section-title">Ventes de légumes</p>
+        <p class="footer-section-text">De mai à octobre</p>
+        <p class="footer-section-text">Sur place : vendredi de 16h à 20h</p>
+        <p class="footer-section-text">Emmaus : mercredi de 14h à 17h</p>
+        <p class="footer-section-text">Click and collect : lundi de 14 à 19h</p>
+    </div>
+</div>
+<div class="acces-photo"></div>
+<section class="go-there-container">
+    <h3 class="go-there-container-title">Se rendre sur place</h3>
+    <div class="go-there-content-container">
+        <div class="go-there-content-left"></div>
+        <div class="go-there-content-right">
+            <p>Afin de se rendre à lieu, nous vous invitons à favoriser la mobilité douce en se rendant sur le lieu à pied, à vélo ou en train. </p>
+            <p>La gare la plus proche est celle de Champagne-sur-Oise située à 5 minutes à pied du lieu. </p>
+            <p>Pour les personnes contraintes de venir en voiture, nous vous invitons à vous garer sur la prairie avoisinant le lieu. </p>
+            <p>Seules les personnes à mobilité réduite, sont autorisées à emprunter la sente jusqu’au conteneurs.</p>
+        </div>
+    </div>
+</section>
+<section class="faq-container">
+    <h3 class="title">FAQ</h3>
+    <div class="flex flex-wrap items-start my-20">
+        <Accordeon title="Quels sont vos horaires d'ouverture ?" details="Test2"/>
+        <Accordeon title="Comment puis-je contribuer ou soutenir le tiers-lieu ?" details="Test3"/>
+        <Accordeon title="Les activités que vous proposées sont-elles payantes ?" details="Cela dépend des activités. Il est possible qu’une adhésion annuelle (10€) vous soit demandée afin de profiter d’un service à l’année. En revanche, beaucoup d’animations sont gratuites comme par exemple nos 2 fêtes annuelles que sont la Fête du Printemps et la Fête de l’Automne."/>
+        <Accordeon title="Où se situe votre tiers-lieu et comment s'y rendre ?" details="Test2"/>
+        <Accordeon title="Je ne m’y connais pas en maraichage puis-je tout de même aider ?" details="Test2"/>
+        <Accordeon title="Pourquoi faut-il adhérer à l'association pour profiter des services ?" details="Test2"/>
+        <Accordeon title="Avez-vous un parking ou un accès en transports en commun ?" details="Test2"/>
+        <Accordeon title="Faut-il apporter du matériel pour participer à certaines activités ?" details="Test2"/>
+        <Accordeon title="Vos légumes sont-ils vraiment bio ?" details="Test2"/>
+        <Accordeon title="Le tiers-lieu est-il accessible aux personnes à mobilité réduite ?" details="Test2"/>
+        <Accordeon title="Prenez vous des stagiaires ou bien des woofeurs ?" details="Test2"/>
+        <Accordeon title="Quels sont les prix de vos légumes ?" details="Test2"/>
+        <Accordeon title="Puis-je venir avec mes enfants/animaux de compagnie ?" details="Test2"/>
+        <Accordeon title="A quoi va servir le don que je souhaite vous faire ?" details="Test2"/>
+        <Accordeon title="Proposez-vous une solutions de compostage sur place ?" details="Test2"/>
+
+    </div>
+</section>
+</Layout>
+<style>
+    .contact-header-container {
+        background-image: url('benevole-header-picture.jpg');
+    }
+    .contact-header-title {
+        color: #FFF6E5;
+        font-size: 50px;
+        width: 445px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+    .call-to-action-black {
+        background-color:transparent;
+        border-radius:1px;
+        border:1px solid #000000;
+        display:inline-block;
+        cursor:pointer;
+        color:#000000;
+        font-family:Arial;
+        font-size:20px;
+        padding:15px 0px;
+        margin: 10px;
+        text-decoration:none;
+        width: 170px;
+        text-align: center;
+    }
+
+    .contact-info-container {
+		display: flex;
+		flex-wrap: wrap;
+		width: 1200px;
+		margin: auto;
+	}
+	.footer-section {
+		width: 50%;
+        margin-top: 50px;
+	}
+	.footer-navigation-list {
+		padding-left: 0;
+		line-height: 1.25;
+	}
+	.footer-section-title {
+		font-size: 16px;
+		font-weight: bold;
+	}
+	.footer-navigation-link {
+		font-size: 14px;
+		list-style-type: none;
+	}
+	.footer-navigation-link a:hover {
+		text-decoration: underline;
+	}
+	.footer-section-text {
+		font-size: 14px;
+		margin: 0;
+	}
+	.social-links {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		gap: 1em;
+		margin-top: 1em;
+	}
+	.social-links a {
+		text-decoration: none;
+		color: rgb(var(--gray));
+	}
+	.social-links a:hover {
+		color: rgb(var(--gray-dark));
+	}
+	.footer-map-icon {
+		width: 15px;
+  		margin-left: -2px;
+	}
+	.footer-social-icons-container {
+		margin-left: -3px;
+	}
+	.footer-instagram-icon {
+		width: 21px;
+		margin-bottom: -1px;
+	}
+	.footer-facebook-icon {
+		width: 19px;
+	}
+	.footer-linkedin-icon {
+		width: 19px;
+	}
+    .acces-photo {
+        width: 1200px;
+        height: 600px;
+        background-image: url('plan-acces.png');
+        background-size: cover;
+        margin: 50px auto;
+    }
+    .go-there-container-title {
+        font-size: 40px;
+        font-weight: 300;
+        width: 400px;
+        margin-bottom: 30px;
+        margin-top: 100px;
+    }
+    .go-there-content-container {
+        display: flex;
+    }
+    .go-there-content-left {
+        width: 50%;
+        height: 600px;
+        background-color: #55735F;
+        margin-right: 30px;
+    }
+    .go-there-content-right {
+        width: 50%;
+        margin-left: 30px;
+    }
+    .faq-container {
+        margin-top: 100px;
+    }
+    .answer-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .answer {
+        width: 33.33%;
+    }
+
+    @media (max-width: 1100px) {
+}
+</style>

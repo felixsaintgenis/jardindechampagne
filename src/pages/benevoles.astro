@@ -1,0 +1,176 @@
+---
+import Layout from '../layouts/ContentPage.astro';
+---
+
+<Layout
+	title="Bénévoles"
+	description="Rejoindre le Jardin de Champagne en tant que bénévole."
+>
+<div class="header-section school-header-container">
+    <h1 class="header-title">Devenez bénévole et participez à la vie du jardin</h1>
+    <a class="call-to-action">Rejoindre le groupe bénévole</a>
+</div>
+<section class="school-services-container">
+    <h3 class="school-services-container-title">Participer à la vie du lieu </h3>
+    <p class="school-services-content">Vous avez envie de passer du tems en pleine nature tout en faisant une différence ? Nous vous invitons à devenir bénévole dans notre/votre jardin, un espace dédidé à la culture de légumes bio et au partage de savoirs.</p>
+    <p class="school-services-content">En tant que bénévole, vous aurez l’occasion de : </p>
+    <ul>
+        <li>Participer aux diverses activités du jardin</li>
+        <li>Apprendre sur la permaculture et le jardinage naturel </li>
+        <li>Rencontrer des passionné.es</li>
+        <li>Contribuer à un projet local</li>
+    </ul>
+    <div class="seminar-photos">
+        <div class="seminar-photo seminar-photo-1"></div>
+        <div class="seminar-photo seminar-photo-2"></div>
+        <div class="seminar-photo seminar-photo-3"></div>
+    </div>
+</section>
+<section class="school-services-container">
+    <h3 class="school-services-container-title">Rejoignez notre groupe bénévole</h3>
+    <p class="school-services-content">Afin de ne rien manquer des activités et des prochains chantiers collectifs, nous vous invitons à rejoindre notre groupe WhatsApp. Chaque semaine, nous y partageons toutes les informations nécessaires : activités, projets, horaires, photos et événements. Ce groupe est un espace convivial d'échanges et d’informations, idéal pour participer pleinement à la vie du jardin !</p>
+    <p class="school-services-content">Pour plus d’informations, ou pour celles et ceux qui n’utiliseraient pas l’application, il est bien toujours possible de nous contacter par mail ou par téléphone.</p>
+</section>
+
+<div class="benevole-call-to-action-container">
+    <a class="benevole-call-to-action-black" href="">Rejoindre le groupe bénévole</a>
+</div>
+<div class="bottom-picture"></div>
+</Layout>
+<style>
+    .school-header-container {
+        background-image: url('benevole-header-picture.jpg');
+    }
+    .school-header-title {
+        color: #FFF6E5;
+        font-size: 50px;
+        width: 445px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+    .call-to-action {
+        background-color:transparent;
+        border-radius:1px;
+        border:1px solid #FFFFFF;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Arial;
+        font-size:20px;
+        padding:15px 0px;
+        margin: 10px;
+        text-decoration:none;
+        width: 170px;
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+    .benevole-call-to-action-black {
+        background-color:transparent;
+        border-radius:1px;
+        border:1px solid #000000;
+        display:inline-block;
+        cursor:pointer;
+        color:#000000;
+        font-family:Arial;
+        font-size:20px;
+        padding:15px 0px;
+        margin: 10px;
+        text-decoration:none;
+        width: 170px;
+        text-align: center;
+    }
+    .school-services-container {
+        margin-top: 100px;
+    }
+    .school-services-container-title {
+        font-size: 40px;
+        font-weight: 300;
+        width: 400px;
+    }
+    .school-services-content {
+        width: 600px;
+    }
+    .company-workshop-container {
+        display: flex;
+        margin-top: 100px;
+    }
+    .workshop-title {
+        font-size: 40px;
+        font-weight: 400;
+    }
+    .kitchen-workshop {
+        margin-right: 30px;
+        width: 50%;
+    }
+    .market-workshop {
+        margin-left: 30px;
+        width: 50%;
+    }
+    .kitchen-picture {
+        width: 100%;
+        height: 500px;
+        background-image: url('school-photo-1.png');
+        background-size: cover;
+        margin-bottom: 50px;
+    }
+    .gardening-picture {
+        width: 100%;
+        height: 500px;
+        background-image: url('school-photo-2.png');
+        background-size: cover;
+        margin-bottom: 50px;
+    }
+    .benevole-call-to-action-container {
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .seminar-photos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+    }
+    .seminar-photo {
+        width: 400px;
+        height: 500px;
+        background-color: #55735F;
+        margin: 20px;
+    }
+    .seminar-photo-1 {
+        background-image: url('photo-benevole-1.png');
+        background-size: cover;
+    }
+    .seminar-photo-2 {
+        background-image: url('photo-benevole-2.png');
+        background-size: cover;
+    }
+    .seminar-photo-3 {
+        background-image: url('photo-benevole-3.png');
+        background-size: cover;
+    }
+    .bottom-picture {
+        margin-top: 100px;
+        margin-bottom: 100px;
+        width: 1300px;
+        height: 600px;
+        background-color: #55735F;
+    }
+
+    @media (max-width: 1100px) {
+		.school-header-container {
+			width: 100%;
+		}
+
+		.footer-section {
+			width: 50%;
+		}
+}
+</style>

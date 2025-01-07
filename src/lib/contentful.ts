@@ -1,20 +1,44 @@
-// @ts-nocheck
-
 import * as contentful from 'contentful'
 import type { EntryFieldTypes } from "contentful";
 
-export interface BlogPost {
-  contentTypeId: "blogPost",
-  fields: {
-    title: EntryFieldTypes.Text
-    content: EntryFieldTypes.RichText,
-    date: EntryFieldTypes.Date,
-    description: EntryFieldTypes.Text,
-    slug: EntryFieldTypes.Text,
-    listImage: EntryFieldTypes.AssetLink
-    horaires: EntryFieldTypes.Text
-  }
+// export interface BlogPost {
+//   contentTypeId: "blogPost",
+//   fields: {
+//     title: EntryFieldTypes.Text
+//     content: EntryFieldTypes.RichText,
+//     date: EntryFieldTypes.Date,
+//     description: EntryFieldTypes.Text,
+//     slug: EntryFieldTypes.Text,
+//     listImage: EntryFieldTypes.Asset
+//     horaires: EntryFieldTypes.Text
+//   }
+// }
+
+import type { EntrySkeletonType } from "contentful";
+
+export interface TypeEventFields {
+    title: EntryFieldTypes.Symbol;
+    body?: EntryFieldTypes.RichText;
+    dateHours?: EntryFieldTypes.Date;
+    shortDescription?: EntryFieldTypes.Text;
+    coverImage?: EntryFieldTypes.AssetLink;
+    slug?: EntryFieldTypes.Symbol;
+    type?: EntryFieldTypes.Text;
 }
+
+export type TypeEventSkeleton = EntrySkeletonType<TypeEventFields, "events">;
+// export type TypeBlogPost<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<TypeBlogPostSkeleton, Modifiers, Locales>;
+
+export interface TypeArticleFields {
+  title: EntryFieldTypes.Symbol;
+  body?: EntryFieldTypes.RichText;
+  date?: EntryFieldTypes.Date;
+  tags?: EntryFieldTypes.Text;
+  coverImage?: EntryFieldTypes.AssetLink;
+  slug?: EntryFieldTypes.Symbol;
+}
+
+export type TypeArticleSkeleton = EntrySkeletonType<TypeArticleFields, "articles">;
 
 export const contentfulClient = contentful.createClient({
   space: import.meta.env.CONTENTFUL_SPACE_ID,

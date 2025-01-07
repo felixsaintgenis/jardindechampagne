@@ -1,0 +1,243 @@
+---
+import Layout from '../layouts/ContentPage.astro';
+---
+
+<Layout
+	title="Entreprises"
+	description="Services aux entreprises du Jardin de Champagne"
+>
+<div class="header-section enterprise-header-container">
+    <h1 class="header-title">Cohésion d’équipe, enracinée dans la nature</h1>
+    <a class="call-to-action">Découvrir nos activités</a>
+</div>
+<section class="seminar-container">
+    <h3 class="seminar-container-title">Un séminaire au vert proche de Paris </h3>
+    <p class="seminar-content">Situé sur le chemin de Halage de Champagne-sur-Oise (Val d’Oise), à 500 mètres de la gare et à seulement 50 minutes de la Gare du Nord, le jardin vous accueille et organise avec vous, de mars à octobre, une ou plusieurs journées uniques de team building.</p>
+    <p class="seminar-content">Découvrez nos 2 ateliers de cohésion d’équipe, conçus autour de valeurs de solidarité, de coopération et d’écologie.</p>
+</section>
+<section class="company-workshop">
+    <div class="company-workshop-container">
+        <div class="kitchen-workshop">
+            <h4 class="workshop-title">Journée(s) Cuillette & assiette</h4>
+            <div class="kitchen-picture"></div>
+            <p class="">Un défi gourmand où plusieurs équipes devront, dans un temps imparti, se dépasser pour cueillir et cuisiner les produits du jardin, afin d’obtenir la meilleure note de leurs pairs après une dégustation collective.</p>
+        </div>
+        <div class="market-workshop">
+            <h4 class="workshop-title">Journée(s) Mains dans la terre</h4>
+            <div class="gardening-picture"></div>
+            <p>Une Initation à la permaculture & au jardinage naturel offrant à vos collaborateurs l’opportunité de sortir de leur cadre habituel et de réaliser ensemble les gestes essemntiels à la production de légumes réellement bio.</p>
+        </div>
+    </div>
+    <div class="enterprise-call-to-action-container">
+        <a class="enterprise-call-to-action-black" href="">Demander un devis</a>
+        <a class="enterprise-call-to-action-black" href="">Découvrir notre plaquette</a>
+    </div>
+    <div class="seminar-photos">
+        <div class="seminar-photo"></div>
+        <div class="seminar-photo"></div>
+        <div class="seminar-photo"></div>
+    </div>
+</section>
+<section class="testimonies-container">
+    <h3 class="testimonies-title">Retour sur la visite de la SNCF</h3>
+    <div class="testimonies-photo"></div>
+    <div class="testimonies-content-container">
+        <p class="testimonies-content-left">Le mois dernier, 30 salariés de la SNCF se sont mobilisés lors d'une journée solidaire pour participer à plusieurs activités écologiques et agricoles. Ensemble, ils ont construit des jardinières éco-construites, récolté des courges prêtes à être consommées et contribué à la préparation de l'hivernage des planches de cultures.</p>
+        <p class="testimonies-content-right">Ce moment de partage et d’engagement a permis d’associer solidarité et protection de l’environnement, tout en renforçant les liens entre les collaborateurs.</p>
+    </div>
+</section>
+<section class="verbatim-container">
+    <h3 class="verbatim-title">Ils témoignent<br /> de leur expérience</h3>
+    <div class="verbatim-content-container">
+        <div class="verbatim-content-container-left">
+            <p>"Une parenthèse verte qui nous a permis de découvrir nos collègues sous un autre jour. Une vraie bouffée d’oxygène ! "</p>
+            <p class="verbatim-signature">Marie, Responsable RH @SNCF</p>
+        </div>
+        <div class="verbatim-content-container-right">
+            <p>"Nos équipes ont adoré le défi Cueillette & Assiette. Une expérience ludique et gourmande qui a fait l’unanimité !"</p>
+            <p class="verbatim-signature">Alexandre, Directeur marketing @Nexity</p>
+        </div>
+    </div>
+</section>
+<section class="company-partners-container">
+    <h3 class="company-partners-title">Ils nous ont<br /> fait confiance</h3>
+    <div class="partners-logo-container">
+        <div><img src="logo-bea.png" alt="logo Béa"></div>
+        <div><img src="logo-sncf.png" alt="logo SNCF"></div>
+        <div><img src="logo-nexity.png" alt="logo Nexity"></div>
+    </div>
+</section>
+<div class="enterprise-call-to-action-container">
+    <a class="enterprise-call-to-action-black" href="">Demander un devis</a>
+    <a class="enterprise-call-to-action-black" href="">Découvrir notre plaquette</a>
+</div>
+</Layout>
+<style>
+        .enterprise-header-container {
+        position: relative;
+		height: 700px;
+        margin-top: -140px;
+        background-image: url('enterprise-header-picture.png');
+        background-size: cover;
+    }
+    .enterprise-header-title {
+        color: #FFF6E5;
+        font-size: 50px;
+        width: 445px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+    .call-to-action {
+        background-color:transparent;
+        border-radius:1px;
+        border:1px solid #FFFFFF;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Arial;
+        font-size:20px;
+        padding:15px 0px;
+        margin: 10px;
+        text-decoration:none;
+        width: 150px;
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+    .enterprise-call-to-action-black {
+        background-color:transparent;
+        border-radius:1px;
+        border:1px solid #000000;
+        display:inline-block;
+        cursor:pointer;
+        color:#000000;
+        font-family:Arial;
+        font-size:20px;
+        padding:15px 0px;
+        margin: 10px;
+        text-decoration:none;
+        width: 150px;
+        text-align: center;
+    }
+    .seminar-container {
+        margin-top: 100px;
+    }
+    .seminar-container-title {
+        font-size: 40px;
+        font-weight: 300;
+        width: 400px;
+    }
+    .seminar-content {
+        width: 600px;
+    }
+    .company-workshop-container {
+        display: flex;
+        margin-top: 100px;
+    }
+    .workshop-title {
+        font-size: 40px;
+        font-weight: 400;
+    }
+    .kitchen-workshop {
+        margin-right: 30px;
+    }
+    .gardening-workshop {
+        margin-left: 30px;
+    }
+    .kitchen-picture {
+        width: 100%;
+        height: 500px;
+        background-image: url('kitchen-picture.png');
+        background-size: cover;
+        margin-bottom: 50px;
+    }
+    .gardening-picture {
+        width: 100%;
+        height: 500px;
+        background-image: url('gardening-picture.png');
+        background-size: cover;
+        margin-bottom: 50px;
+    }
+    .enterprise-call-to-action-container {
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .seminar-photos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+    }
+    .seminar-photo {
+        width: 400px;
+        height: 500px;
+        background-color: #55735F;
+        margin: 20px;
+    }
+    .testimonies-container {
+        margin-top: 100px;
+    }
+    .testimonies-title {
+        font-size: 40px;
+        font-weight: 300;
+        width: 310px;
+    }
+    .testimonies-photo {
+        margin-top: 30px;
+        width: 100%;
+        height: 600px;
+        background-color: #55735F;
+    }
+    .testimonies-content-container {
+        display: flex;
+    }
+    .testimonies-content-left {
+        width: 50%;
+        padding-right: 20px;
+    }
+    .testimonies-content-right {
+        width: 50%;
+        padding-left: 20px;
+    }
+    .verbatim-container {
+        margin-top: 100px;
+    }
+    .verbatim-title {
+        font-size: 40px;
+        font-weight: 300;
+    }
+    .verbatim-content-container {
+        display: flex;
+    }
+    .verbatim-content-container-left {
+        width: 50%;
+        margin-right: 50px;
+    }
+    .verbatim-content-container-right {
+        width: 50%;
+        margin-left: 50px;
+    }
+    .verbatim-signature {
+        font-size: 12px;
+    }
+    .company-partners-container {
+        margin-top: 100px;
+    }
+    .company-partners-title {
+        font-size: 40px;
+        font-weight: 300;
+    }
+    .partners-logo-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 50px;
+    }
+</style>
