@@ -39,20 +39,23 @@ import HeaderLink from './HeaderLink.astro';
 				<li class="header-link"><a href="/projet">Projet</a></li>
 				<li class="header-link"><a href="/blog">Actualités</a></li>
 				<li class="header-link"><a href="/contact">Contact</a></li>
-				<!-- <HeaderLink href="/agenda" class="header-link">Agenda</HeaderLink>
-				<p class="header-link sub-menu">
-					Participer
-					<div class="subnavigation-menu">
-						<a href="/entreprises">Organiser un teambuilding</a>
-					</div>
-				</p>
-				<HeaderLink href="/projet" class="header-link">Projet</HeaderLink>
-				<HeaderLink href="/blog" class="header-link">Actualités</HeaderLink>
-				<HeaderLink href="/contact" class="header-link">Contact</HeaderLink> -->
 			</ul>
+				<a href="javascript:void(0);" id="burgerMenu">
+					<img class="burger-menu" src="/images/menu.png" alt="burger menu">
+				  </a>
+				  <ul id="mobile-menu" class="mobile-navigation">
+					<li class="mobile-menu-item"><a href="/projet">Agenda</a></li>
+					<li class="mobile-menu-item"><a href="/projet">Participer</a></li>
+					<li class="mobile-menu-item"><a href="/projet">Projet</a></li>
+					<li class="mobile-menu-item"><a href="/projet">Actualités</a></li>
+					<li class="mobile-menu-item"><a href="/projet">Contact</a></li>
+				</ul>
 		</nav>
 </header>
 <style>
+	#mobile-menu {
+	display: none;
+}	
 .top-banner {
 	font-size: 14px;
 	display: flex;
@@ -67,6 +70,9 @@ import HeaderLink from './HeaderLink.astro';
 .header-logo {
 	padding-top: 25px;
 	padding-left: 50px;
+}
+.burger-menu {
+	display: none;
 }
 /* #header {
 	z-index: 1;
@@ -144,8 +150,76 @@ import HeaderLink from './HeaderLink.astro';
 	.top-banner {
 		display: none;
 	}
-	.navigation-menu {
+	.navigation-links {
 		display: none;
 	}
+	.navigation-menu {
+		width: 100%;
+		justify-content: center;
+	}
+	.header-logo {
+		width: 150px;
+		margin-top: 30px;
+		padding: 0;
+	}
+	.burger-menu {
+	display: block;
+	position: absolute;
+	top: 41%;
+	left: 94%;
+	width: 30px;
+	height: 30px;
+	margin-right: 20px;
+	z-index: 100;
 }
+.mobile-navigation {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	background-color: #FFF6E5;
+	text-align: center;
+	padding: 120px;
+}
+.mobile-menu-item {
+	font-size: 30px;
+	color: #000000;
+}
+
+}
+@media (max-width: 790px) {
+	.burger-menu {
+	left: 88%;
+}
+}
+
 </style>
+
+<script>
+document.addEventListener("astro:page-load", () => {	
+	const burgerMenu = document.getElementById("burgerMenu");
+	const mobileMenu = document.getElementById("mobile-menu");
+
+	burgerMenu.addEventListener("click", () => toggleMenu());
+
+	function toggleMenu() {
+		console.log('lala')
+		if (mobileMenu.style.display === "block") {
+			mobileMenu.style.display = "none";
+			console.log('lala1')
+		} else {
+			mobileMenu.style.display = "block";
+			console.log('lala2')
+		}
+		
+	}
+
+	document.addEventListener("click", (event) => {
+	if (!burgerMenu.contains(event.target) && !mobileMenu.contains(event.target)) {
+		mobileMenu.style.display = "none";
+		// burgerIcon.classList.remove("open");
+	}
+});
+});
+</script>

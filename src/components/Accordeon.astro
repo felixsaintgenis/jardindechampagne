@@ -88,4 +88,15 @@ const { title, details } = Astro.props as Props;
         margin: auto;
         margin-bottom: 20px;
     }
+
+    @media (max-width: 790px) {
+      .accordion {
+        width: 48%;
+    }
+}
+@media (max-width: 390px) {
+  .accordion {
+        width: 100%;
+    }
+}    
 </style>

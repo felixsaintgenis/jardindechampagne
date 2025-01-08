@@ -74,9 +74,6 @@ const tags = ['tout', 'vente de légumes', 'repair café', 'cinéma', 'temps de 
     .agenda-header-container {
         background-image: url('/images/agenda-header-picture.jpg');
     }
-    .header-title {
-        width: 800px;
-    }
     .overlay {
         position: absolute;
         width: 100%;
@@ -146,4 +143,43 @@ const tags = ['tout', 'vente de légumes', 'repair café', 'cinéma', 'temps de 
 	text-decoration:none;
 	width: 230px;
 }
+@media (min-width: 790px) {
+	.header-title {
+				width: 800px;
+			}
+}	   		
+@media (max-width: 1300px) {
+	.event-item {
+			width: 48%;
+			height: 500px;
+		}
+}
+
+@media (max-width: 1100px) {
+		.events-list {
+			justify-content: center;
+		}
+    }  
+
+	@media (max-width: 790px) {
+	.event-item {
+		width: 45.8%;
+		height: 200px;
+		}
+		.event-item-title {
+		font-size: 20px;
+	}
+	.event-button {
+		font-size:12px;
+		padding:2px 0px;
+		margin: 0;
+		width: 120px;
+	}		   	
+    }   
+@media (max-width: 390px) {
+	.event-item {
+		width: 45.3%;
+		height: 200px;
+		}
+}	   		
 </style>

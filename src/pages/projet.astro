@@ -180,6 +180,10 @@ import Layout from '../layouts/ContentPage.astro';
         justify-content: space-between;
         align-items: center;
     }
+    .partners-logo-container > div {
+        margin-top: 40px;
+        margin-right: 20px;
+    }
 
 
 
@@ -213,40 +217,40 @@ import Layout from '../layouts/ContentPage.astro';
             text-align: center;
         }
         .project-description-content {
+            width: 100%;
+            padding: 0 20px;
             margin: auto;
         }
         .associations-container {
         margin-left: 30px;
     }
+    .partners-container-title {
+        padding-left: 20px;
     }
-    @media (min-width:1000px) and (max-width:1100px) {
-        .history-container-left {
-             margin-left: 30px;
     }
-    .project-description-content-container {
-        margin-left: 30px;
-    }
-    .associations-container {
-        margin-left: 30px;
-    }
-}​
     @media (max-width: 790px) {
-        .history-content {
+        .history-content {  
             padding: 0;
-        }
-	.project-header-title {
-		font-size: 38px;
-    }  	
-    .project-description-content {
-            width: 100%;
-            padding: 0 20px;
         }
         .history-container {
             margin-top: 30px;
         }
         .history-container-left {
             padding: 20px;
-        }	   	
+        } 	
+        .associations-description-container > div {
+        flex: 100%;
+    }
+    .associations-description-content-right {
+        padding-left: 0;
+    }
+    .associations-container-subtitle {
+        width: 100%;
+        padding-right: 20px;
+    }
+    .partners-logo-container {
+        flex-direction: column;
+    }
 }   
 @media (max-width: 390px) {
 	.call-to-action-container {
@@ -262,4 +266,16 @@ import Layout from '../layouts/ContentPage.astro';
     font-size: 30px;
 }   		
     }   
+
+    @media (min-width:1000px) and (max-width:1100px) {
+        .history-container-left {
+             margin-left: 30px;
+    }
+    .project-description-content-container {
+        margin-left: 30px;
+    }
+    .associations-container {
+        margin-left: 30px;
+    }
+}
 </style>

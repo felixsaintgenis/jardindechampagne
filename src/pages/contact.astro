@@ -10,6 +10,7 @@ import Accordeon from '../components/Accordeon.astro';
 <div class="header-section contact-header-container">
     <h1 class="header-title">Contact</h1>
 </div>
+<div class="contact-page">
 <div class="contact-info-container">
     <div class="footer-section">
         <p class="footer-section-title">Adresse</p>
@@ -77,6 +78,7 @@ import Accordeon from '../components/Accordeon.astro';
 
     </div>
 </section>
+</div>
 </Layout>
 <style>
     .contact-header-container {
@@ -207,6 +209,51 @@ import Accordeon from '../components/Accordeon.astro';
         width: 33.33%;
     }
 
-    @media (max-width: 1100px) {
+    @media (max-width: 1300px) {
+        .acces-photo {
+            width: 100%;
+        }
+}
+
+    @media (max-width: 1000px) {
+        .contact-page {
+            padding: 0 20px;
+        }
+        .contact-info-container {
+            width: 100%;
+        }
+}
+@media (max-width: 790px) {
+.footer-section {
+    width: 100%;
+}
+.go-there-content-container {
+    flex-direction: column;
+}
+.go-there-content-right {
+    margin-top: 20px;
+}
+.go-there-content-left, .go-there-content-right {
+    width: 100%;
+    margin-left: 0;
+}
+.go-there-container-title {
+    width: 300px;
+}
+.acces-photo {
+            height: 400px;
+            background-position: center;
+        }
+        .go-there-content-left {
+            height: 400px;
+        }
+}
+@media (max-width: 390px) {
+.acces-photo {
+            height: 400px;
+        }
+.go-there-content-left {
+            height: 300px;
+        }
 }
 </style>

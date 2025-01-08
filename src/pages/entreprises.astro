@@ -10,6 +10,7 @@ import Layout from '../layouts/ContentPage.astro';
     <h1 class="header-title">Cohésion d’équipe, enracinée dans la nature</h1>
     <a class="call-to-action">Découvrir nos activités</a>
 </div>
+<div class="entreprise-page">
 <section class="seminar-container">
     <h3 class="seminar-container-title">Un séminaire au vert proche de Paris </h3>
     <p class="seminar-content">Situé sur le chemin de Halage de Champagne-sur-Oise (Val d’Oise), à 500 mètres de la gare et à seulement 50 minutes de la Gare du Nord, le jardin vous accueille et organise avec vous, de mars à octobre, une ou plusieurs journées uniques de team building.</p>
@@ -70,6 +71,7 @@ import Layout from '../layouts/ContentPage.astro';
 <div class="enterprise-call-to-action-container">
     <a class="enterprise-call-to-action-black" href="">Demander un devis</a>
     <a class="enterprise-call-to-action-black" href="">Découvrir notre plaquette</a>
+</div>
 </div>
 </Layout>
 <style>
@@ -240,4 +242,73 @@ import Layout from '../layouts/ContentPage.astro';
         align-items: center;
         margin-top: 50px;
     }
+
+    @media (max-width: 1100px) {
+		.entreprise-page {
+			padding: 0 20px
+		}
+    }
+    @media (max-width: 790px) {
+		.seminar-container {
+			width: 100%;
+            text-align: center;
+		}
+        .seminar-content {
+            width: 100%;
+            text-align: center;
+        }
+        .seminar-container-title {
+            width: 100%;
+            text-align: center;
+        }
+        .company-workshop-container {
+            flex-direction: column;
+        }
+        .workshop-title {
+            text-align: center;
+        }
+        .kitchen-workshop {
+            margin-right: 0;
+        }
+        .kitchen-picture, .gardening-picture {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .workshop-title {
+            margin-top: 30px;
+        }
+        .seminar-photos {
+            display: none;
+        }
+        .partners-logo-container {
+            flex-direction: column;
+            justify-content: center;
+        }
+        .partners-logo-container > div {
+            margin-top: 30px;
+        }
+    }        
+    @media (max-width: 390px) {
+        .kitchen-picture, .gardening-picture {
+            height: 400px;
+        }
+        .testimonies-photo {
+            height: 400px;
+            margin-bottom: 20px;
+        }
+        .testimonies-content-container {
+            flex-direction: column;
+        }
+        .testimonies-content-left, .testimonies-content-right {
+            width: 100%;
+            padding: 0;
+        }
+        .verbatim-content-container {
+            flex-direction: column;
+        }
+        .verbatim-content-container-left, .verbatim-content-container-right {
+            width: 100%;
+            margin: 0;
+        }
+    }         
 </style>

@@ -176,7 +176,6 @@ hr {
 .header-section {
 	width: 1300px;
 	position: relative;
-	background-image: url('/images/jardindechampagne.jpg');
 	background-size: cover;
 	height: 700px;
 	margin: auto;
@@ -239,6 +238,7 @@ hr {
 
 @media (max-width: 790px) {
 	.header-title {
+		width: 360px;
 		font-size: 38px;
 }   		   	
     }   
