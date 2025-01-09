@@ -10,6 +10,7 @@ import Layout from '../layouts/ContentPage.astro';
     <h1 class="header-title">Devenez bénévole et participez à la vie du jardin</h1>
     <a class="call-to-action">Rejoindre le groupe bénévole</a>
 </div>
+<div class="benevole-page">
 <section class="school-services-container">
     <h3 class="school-services-container-title">Participer à la vie du lieu </h3>
     <p class="school-services-content">Vous avez envie de passer du tems en pleine nature tout en faisant une différence ? Nous vous invitons à devenir bénévole dans notre/votre jardin, un espace dédidé à la culture de légumes bio et au partage de savoirs.</p>
@@ -36,6 +37,7 @@ import Layout from '../layouts/ContentPage.astro';
     <a class="benevole-call-to-action-black" href="">Rejoindre le groupe bénévole</a>
 </div>
 <div class="bottom-picture"></div>
+</div>
 </Layout>
 <style>
     .school-header-container {
@@ -163,8 +165,21 @@ import Layout from '../layouts/ContentPage.astro';
         height: 600px;
         background-color: #55735F;
     }
-
+    @media (max-width: 1300px) {
+        .benevole-page {
+            padding: 0 20px;
+        }
+		.school-header-container {
+			width: 100%;
+		}
+        .bottom-picture {
+            width: 100%;
+        }
+}
     @media (max-width: 1100px) {
+        .benevole-page {
+            padding: 0 20px;
+        }
 		.school-header-container {
 			width: 100%;
 		}
@@ -172,5 +187,39 @@ import Layout from '../layouts/ContentPage.astro';
 		.footer-section {
 			width: 50%;
 		}
+}
+@media (max-width: 790px) {
+        .benevole-page {
+            padding: 0 20px;
+        }
+		.school-header-container {
+			width: 100%;
+		}
+        .seminar-photos {
+            flex-direction: column;
+        }
+        .seminar-photo {
+            width: 100%;
+            margin: 0;
+            margin-top: 20px;
+            padding-top: 20px;
+            background-position: center;
+            height: 400px;
+        }
+        .school-services-container-title {
+            width: 100%;
+        }
+        .school-services-content {
+            width: 100%;
+        }
+        .bottom-picture {
+            height: 400px;
+        }
+        .school-services-container-title {
+            text-align: center;
+        }
+        .school-services-content {
+            text-align: center;
+        }
 }
 </style>

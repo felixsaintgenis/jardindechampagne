@@ -21,8 +21,8 @@ const tags = ['tout', 'vente de légumes', 'repair café', 'cinéma', 'temps de 
 ---
 
 <Layout
-	title="Agenda"
-	description="Tous nos événements"
+	title="Actualités"
+	description="Blog du jardin de Champagne"
 >
     <div id="events" class="">
         <!-- <section class="top-event flex justify-center items-center mb-20">
@@ -56,11 +56,11 @@ const tags = ['tout', 'vente de légumes', 'repair café', 'cinéma', 'temps de 
                 class="event-item"
                 style={ post.coverImage && post.coverImage.fields && post.coverImage.fields.file ? { backgroundImage:'url(' + post.coverImage.fields.file.url + ')' } : {}}
                 >
-                    <a href={`/agenda/${post.slug}/`}>
+                    <a href={`/blog/${post.slug}/`}>
                     <h2 class="event-item-title">{post.title}</h2>
                     </a>
                     {/* <p>{post.shortDescription}</p> */}
-                    <a href={`/agenda/${post.slug}/`} class="call-to-action event-button">Voir l'article</a>
+                    <a href={`/blog/${post.slug}/`} class="call-to-action event-button">Voir l'article</a>
                 </li>
                 )})}
             </ul>
