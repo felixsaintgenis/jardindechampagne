@@ -8,10 +8,11 @@ const eventEntries = await contentfulClient.withoutUnresolvableLinks.getEntries<
 });
 
 const events = eventEntries.items.map((item) => {
-  const { title, dateHours, shortDescription, coverImage, slug, body, type } = item.fields;
+  const { title, date, hours, shortDescription, coverImage, slug, body, type } = item.fields;
   return {
     title,
-	dateHours,
+	date,
+    hours,
 	shortDescription,
 	coverImage,
 	body,
@@ -62,6 +63,8 @@ const tags = ['tout', 'vente de légumes', 'repair café', 'cinéma', 'temps de 
                     <a href={`/agenda/${post.slug}/`}>
                     <h2 class="event-item-title">{post.title}</h2>
                     </a>
+                    <span class="event-date">{post.date}</span>
+                    <span class="event-hour">{post.hours}</span>
                     {/* <p>{post.shortDescription}</p> */}
                     <a href={`/agenda/${post.slug}/`} class="call-to-action event-button">Plus <br />d'informations</a>
                 </li>
@@ -73,6 +76,9 @@ const tags = ['tout', 'vente de légumes', 'repair café', 'cinéma', 'temps de 
 <style>
     .agenda-header-container {
         background-image: url('/images/agenda-header-picture.jpg');
+    }
+    .events-lists-container {
+        margin-bottom: 50px;
     }
     .overlay {
         position: absolute;
@@ -129,6 +135,20 @@ const tags = ['tout', 'vente de légumes', 'repair café', 'cinéma', 'temps de 
 		left: 50%;
 		transform: translate(-50%, -50%);
 	}
+    .event-date {
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding: 10px;
+		color: #ffffff;
+	}
+	.event-hour {
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding: 10px;
+		color: #ffffff;
+	}
     .call-to-action {
 	background-color:transparent;
 	border-radius:1px;
@@ -168,6 +188,10 @@ const tags = ['tout', 'vente de légumes', 'repair café', 'cinéma', 'temps de 
 		}
 		.event-item-title {
 		font-size: 20px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
 	}
 	.event-button {
 		font-size:12px;

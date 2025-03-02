@@ -34,9 +34,9 @@ import Layout from '../layouts/ContentPage.astro';
         <a class="enterprise-call-to-action-black" href="">Découvrir notre plaquette</a>
     </div>
     <div class="seminar-photos">
-        <div class="seminar-photo"></div>
-        <div class="seminar-photo"></div>
-        <div class="seminar-photo"></div>
+        <div class="seminar-photo seminar-photo-1"></div>
+        <div class="seminar-photo seminar-photo-2"></div>
+        <div class="seminar-photo seminar-photo-3"></div>
     </div>
 </section>
 <section class="testimonies-container">
@@ -63,13 +63,13 @@ import Layout from '../layouts/ContentPage.astro';
 <section class="company-partners-container">
     <h3 class="company-partners-title">Ils nous ont<br /> fait confiance</h3>
     <div class="partners-logo-container">
-        <div><img src="/images/logo-bea.png" alt="logo Béa"></div>
-        <div><img src="/images/logo-sncf.png" alt="logo SNCF"></div>
-        <div><img src="/images/logo-nexity.png" alt="logo Nexity"></div>
+        <div><a href="https://www.agence-bea.com/" target="_blank"><img class="partner-logo" src="/images/logo-bea.png" alt="logo Béa"></a></div>
+        <div><a href="https://www.groupe-sncf.com/fr" target="_blank"><img class="partner-logo"src="/images/logo-sncf.png" alt="logo SNCF"></a></div>
+        <div><a href="https://www.nexity.fr/" target="_blank"><img class="partner-logo" src="/images/logo-nexity.png" alt="logo Nexity"></a></div>
     </div>
 </section>
 <div class="enterprise-call-to-action-container">
-    <a class="enterprise-call-to-action-black" href="">Demander un devis</a>
+    <a class="enterprise-call-to-action-black" href="mailto:bonjour@jardindechampagne.com?Subject=Demande de devis - Journée entreprise">Demander un devis</a>
     <a class="enterprise-call-to-action-black" href="">Découvrir notre plaquette</a>
 </div>
 </div>
@@ -79,7 +79,7 @@ import Layout from '../layouts/ContentPage.astro';
         position: relative;
 		height: 700px;
         margin-top: -140px;
-        background-image: url('/images/enterprise-header-picture.png');
+        background-image: url('/images/enterprise-header-picture.jpg');
         background-size: cover;
     }
     .enterprise-header-title {
@@ -137,6 +137,18 @@ import Layout from '../layouts/ContentPage.astro';
     .seminar-content {
         width: 600px;
     }
+    .seminar-photo-1 {
+        background-image: url('/images/recolte-ail-min.jpg');
+        background-size: cover;
+    }
+    .seminar-photo-2 {
+        background-image: url('/images/planche-salade-min.jpg');
+        background-size: cover;
+    }
+    .seminar-photo-3 {
+        background-image: url('/images/construction-serre-min.jpg');
+        background-size: cover;
+    }
     .company-workshop-container {
         display: flex;
         margin-top: 100px;
@@ -154,14 +166,14 @@ import Layout from '../layouts/ContentPage.astro';
     .kitchen-picture {
         width: 100%;
         height: 500px;
-        background-image: url('/images/kitchen-picture.png');
+        background-image: url('/images/kitchen-picture.jpg');
         background-size: cover;
         margin-bottom: 50px;
     }
     .gardening-picture {
         width: 100%;
         height: 500px;
-        background-image: url('/images/gardening-picture.png');
+        background-image: url('/images/gardening-picture.jpg');
         background-size: cover;
         margin-bottom: 50px;
     }
@@ -196,6 +208,10 @@ import Layout from '../layouts/ContentPage.astro';
         width: 100%;
         height: 600px;
         background-color: #55735F;
+        background-image: url('/images/journee-serre-min.jpg');
+        background-position: center;
+        background-size: cover;
+        margin-bottom: 30px;
     }
     .testimonies-content-container {
         display: flex;
@@ -241,6 +257,9 @@ import Layout from '../layouts/ContentPage.astro';
         justify-content: space-around;
         align-items: center;
         margin-top: 50px;
+    }
+    .partner-logo {
+        width: 280px;
     }
 
     @media (max-width: 1100px) {

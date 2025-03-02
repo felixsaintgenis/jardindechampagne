@@ -7,17 +7,18 @@ import Layout from '../layouts/ContentPage.astro';
 	description="Informations sur les légumes et les ventes du Jardin de Champagne."
 >
 <div class="sale-header-container">
+    <div class="overlay"></div>
     <h1 class="sale-header-title">Découvrez notre production bio, locale, de saison et à prix solidaire. </h1>
-    <a class="call-to-action">Vente en ligne</a>
+    <a href="https://commande.kuupanda.com/producteur/5740/particulier" target="_blank" class="call-to-action">Vente en ligne</a>
 </div>
 <section class="market-sales-container">
 	<div class="market-sales-container-left">
 		<h3 class="market-sales-content-title">Ventes physique</h3>
 		<p class="market-sales-content">De juin à octobre, nous organisons deux ventes physiques hebdomadaires : </p>
-		<p class="market-sales-content">Sur place : les vendredis de 16h à 20h <br />À Emmaus : les mercredis de 14h à 17h</p>
+		<p class="market-sales-content">Sur place : les vendredis de 16h à 20h <br />Place de nogent à l'Isle Adam : les samedis de 9h à 13h</p>
 		<h3 class="market-sales-content-title">Click & collect</h3>
 		<p class="market-sales-content">Il est également possible de profiter de notre service de vente à emporter en commandant en ligne les produits de votre choix, puis en les récupérant sur place, chaque lundi entre 14h et 17h.</p>
-		<a class="market-sales-call-to-action">Vente en ligne</a>
+		<a href="https://commande.kuupanda.com/producteur/5740/particulier" target="_blank" class="market-sales-call-to-action">Vente en ligne</a>
 	</div>
 	<div class="market-sales-container-right"></div>
 </section>
@@ -53,6 +54,13 @@ import Layout from '../layouts/ContentPage.astro';
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
+    }
+    .overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #000000;
+        opacity: 20%;
     }
     .call-to-action {
         background-color:transparent;
@@ -101,8 +109,9 @@ import Layout from '../layouts/ContentPage.astro';
         padding: 100px 0;
     }
     .market-sales-container-right {
-        background-image: url('/images/project-picture-one.png');
+        background-image: url('/images/vente-legume.jpg');
         background-size: cover;
+        background-position: center;
         width: 50%;
         height: auto;
         margin-left: 50px;
@@ -145,15 +154,17 @@ import Layout from '../layouts/ContentPage.astro';
     .kitchen-picture {
         width: 100%;
         height: 500px;
-        background-image: url('/images/kitchen-picture.png');
+        background-image: url('/images/radis.jpg');
         background-size: cover;
+        background-position: center;
         margin-bottom: 50px;
     }
     .gardening-picture {
         width: 100%;
         height: 500px;
-        background-image: url('/images/ardening-picture.png');
+        background-image: url('/images/vente-legume2.jpg');
         background-size: cover;
+        background-position: center;
         margin-bottom: 50px;
     }
 </style>

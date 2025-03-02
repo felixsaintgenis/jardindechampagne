@@ -26,6 +26,7 @@ const { body, title, coverImage } = Astro.props;
 	description="description"
 >
 <div style={ coverImage && coverImage.fields && coverImage.fields.file ? { backgroundImage:'url(' + coverImage.fields.file.url + ')' } : {}} class="header-section">
+  <div class="overlay"></div>
     <h1 class="header-title">{title}</h1>
 </div>
     <article class="blog-section" set:html={body} />
@@ -39,5 +40,12 @@ const { body, title, coverImage } = Astro.props;
     }
     .blog-section {
         padding: 50px;
+    }
+    .overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #000000;
+        opacity: 20%;
     }
 </style>

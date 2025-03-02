@@ -19,7 +19,8 @@ import type { EntrySkeletonType } from "contentful";
 export interface TypeEventFields {
     title: EntryFieldTypes.Symbol;
     body: EntryFieldTypes.RichText;
-    dateHours?: EntryFieldTypes.Date;
+    date?: EntryFieldTypes.Text;
+    hours?: EntryFieldTypes.Text;
     shortDescription?: EntryFieldTypes.Text;
     coverImage?: EntryFieldTypes.AssetLink;
     slug?: EntryFieldTypes.Symbol;
@@ -32,7 +33,6 @@ export type TypeEventSkeleton = EntrySkeletonType<TypeEventFields, "events">;
 export interface TypeArticleFields {
   title: EntryFieldTypes.Symbol;
   body?: EntryFieldTypes.RichText;
-  date?: EntryFieldTypes.Date;
   tags?: EntryFieldTypes.Text;
   coverImage?: EntryFieldTypes.AssetLink;
   slug?: EntryFieldTypes.Symbol;
