@@ -29,10 +29,10 @@ import HeaderLink from './HeaderLink.astro';
 				<li class="header-link sub-menu">
 					<a href="">Participer</a>
 					<ul class="subnavigation-menu">
-						<li class="subnavigation-item"><a href="/entreprises">Organiser un teambuilding</a></li>
-						<li class="subnavigation-item"><a href="/scolaires">Venir avec sa classe</a></li>
-						<li class="subnavigation-item"><a href="/benevoles">S'impliquer dans le projet</a></li>
-						<li class="subnavigation-item"><a href="/ventes">Venir aux ventes de légumes</a></li>
+						<li class="subnavigation-item"><a href="/entreprises">Organiser <br /> un teambuilding</a></li>
+						<li class="subnavigation-item"><a href="/scolaires">Venir <br />avec sa classe</a></li>
+						<li class="subnavigation-item"><a href="/benevoles">S'impliquer  <br />dans le projet</a></li>
+						<li class="subnavigation-item"><a href="/ventes">Ventes  <br />de légumes</a></li>
 						<li class="subnavigation-item"><a href="https://www.helloasso.com/associations/racines-de-demain">Faire un don</a></li>
 					</ul>
 				</li>
@@ -61,15 +61,15 @@ import HeaderLink from './HeaderLink.astro';
 	display: flex;
 	justify-content: end;
 	align-items: center;
-	width: 1100px;
+	width: 1300px;
 	margin: auto;
 	padding-top: 50px;
-	padding-right: 50px;
-  	padding-bottom: 15px;
+  	padding-bottom: 2px;
 }	
 .header-logo {
 	padding-top: 25px;
 	padding-left: 50px;
+	width: 230px;
 }
 .burger-menu {
 	display: none;
@@ -82,12 +82,13 @@ import HeaderLink from './HeaderLink.astro';
 	display: flex;
 	align-items: center;
  	justify-content: space-between;
-	width: 1100px;
+	width: 1300px;
 	margin: auto;
 	z-index: 1;
+	height: 140px;
 }
 .header-link {
-	font-size: 22px;
+	font-size: 20px;
 	padding-right: 50px;
 }
 .header-link:hover {
@@ -96,26 +97,32 @@ import HeaderLink from './HeaderLink.astro';
 .navigation-links {	
 	display: flex;
 	color: #FFF6E5;
+	margin-right: -370px;
 }
 .subnavigation-menu {
   display: none;
   position: absolute;
-  left: 48%;
+  top: 60%;
+  left: 58%;
   background-color: #FFF6E5;
-  width: 300px;
+  width: 200px;
   z-index: 1;
-  padding: 20px;
+  border-radius: 5px;
+  opacity: 0.9;
 }
 .sub-menu:hover .subnavigation-menu {
   display: block;
 }
+.subnavigation-item:first-child {
+	border-top: none
+}
 .subnavigation-item {
+	line-height: 1.05;
 	font-size: 18px;
 	font-weight: 400;
 	color: #000000;
-}
-.subnavigation-item:hover {
-	text-decoration: underline;
+	padding: 15px;
+	border-top: 1px solid #000000;
 }
 .banner-divider {
 	padding: 0 10px;
@@ -143,7 +150,7 @@ import HeaderLink from './HeaderLink.astro';
 	padding-right: 0px;
 }	
 }
-@media (max-width: 1100px) {
+@media (max-width: 1260px) {
 	.header-section {
 		display: none;
 	}
@@ -180,7 +187,7 @@ import HeaderLink from './HeaderLink.astro';
 	width: 100%;
 	background-color: #FFF6E5;
 	text-align: center;
-	padding: 120px;
+	padding: 110px;
 }
 .mobile-menu-item {
 	font-size: 30px;

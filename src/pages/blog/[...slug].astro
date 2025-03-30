@@ -1,6 +1,7 @@
 ---
 import { contentfulClient } from "../../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import { BLOCKS } from "@contentful/rich-text-types";
 import type { TypeArticleSkeleton } from "../../lib/contentful";
 import Layout from '../../layouts/ContentPage.astro';
 
@@ -8,11 +9,38 @@ export async function getStaticPaths() {
   const { items } = await contentfulClient.withoutUnresolvableLinks.getEntries<TypeArticleSkeleton>({
     content_type: "articles",
   });
+  const options = {
+  renderNode: {
+    [BLOCKS.PARAGRAPH]: (node, next) => (
+      `<p style="font-size: 20px; margin-bottom:50px">${next(node.content)}</p>`
+    ),
+    [BLOCKS.HEADING_1]: (node, next) => (
+      `<h1 style="font-size: 30px; margin-bottom:20px">${next(node.content)}</h1>`
+    ),
+    [BLOCKS.HEADING_2]: (node, next) => (
+      `<h2 style="font-size: 25px; margin-bottom:20px">${next(node.content)}</h2>`
+    ),
+    [BLOCKS.HEADING_3]: (node, next) => (
+      `<h3 style="font-size: 22px; margin-bottom:20px">${next(node.content)}</h3>`
+    ),
+    [BLOCKS.EMBEDDED_ASSET]: (node: any) => {
+        const { file, title } = node.data.target.fields;
+        return (
+          `<img
+            src=${file.url}
+            alt="Contentful Image"
+            class="rounded-lg shadow-md mx-auto my-4"
+            loading="lazy"
+          />`
+      
+  )}
+},
+};
   const pages = items.map((item) => ({
     params: { slug: item.fields.slug },
     props: {
       title: item.fields.title,
-      body: documentToHtmlString(item.fields.body),
+      body: documentToHtmlString(item.fields.body, options),
       coverImage: item.fields.coverImage
     },
   }));

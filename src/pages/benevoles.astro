@@ -16,10 +16,10 @@ import Layout from '../layouts/ContentPage.astro';
     <p class="school-services-content">Vous avez envie de passer du tems en pleine nature tout en faisant une différence ? Nous vous invitons à devenir bénévole dans notre/votre jardin, un espace dédidé à la culture de légumes bio et au partage de savoirs.</p>
     <p class="school-services-content">En tant que bénévole, vous aurez l’occasion de : </p>
     <ul>
-        <li>Participer aux diverses activités du jardin</li>
-        <li>Apprendre sur la permaculture et le jardinage naturel </li>
-        <li>Rencontrer des passionné.es</li>
-        <li>Contribuer à un projet local</li>
+        <li>- Participer aux diverses activités du jardin</li>
+        <li>- Apprendre sur la permaculture et le jardinage naturel </li>
+        <li>- Rencontrer des passionné.es</li>
+        <li>- Contribuer à un projet local</li>
     </ul>
     <div class="seminar-photos">
         <div class="seminar-photo seminar-photo-1"></div>
@@ -40,6 +40,9 @@ import Layout from '../layouts/ContentPage.astro';
 </div>
 </Layout>
 <style>
+    .benevole-page {
+            margin-bottom: 100px;
+        }
     .school-header-container {
         background-image: url('/images/benevole-header-picture.jpg');
     }
@@ -94,6 +97,7 @@ import Layout from '../layouts/ContentPage.astro';
         font-size: 40px;
         font-weight: 300;
         width: 400px;
+        margin-bottom: 30px;
     }
     .school-services-content {
         width: 600px;
@@ -142,7 +146,7 @@ import Layout from '../layouts/ContentPage.astro';
     }
     .seminar-photo {
         width: 400px;
-        height: 500px;
+        height: 600px;
         background-color: #55735F;
         margin: 20px;
     }
@@ -164,7 +168,7 @@ import Layout from '../layouts/ContentPage.astro';
         width: 1300px;
         height: 600px;
         background-color: #55735F;
-        background-image: url('/images/journee-serre-min.jpg');
+        background-image: url('/images/photo-benevole.jpg');
         background-size: cover;
         background-position: center;
     }
@@ -190,6 +194,9 @@ import Layout from '../layouts/ContentPage.astro';
 		.footer-section {
 			width: 50%;
 		}
+        .seminar-photo {
+            height: 300px;
+        }
 }
 @media (max-width: 790px) {
         .benevole-page {

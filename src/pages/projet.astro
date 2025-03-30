@@ -31,22 +31,25 @@ import Layout from '../layouts/ContentPage.astro';
         <h3 class="associations-container-title">4 associations complémentaires</h3>
         <p class="associations-container-subtitle">L’ensemble de la vie du Jardin repose sur le travail de 4 associations locales et complémentaires</p>
         <div class="associations-description-container">
-            <div><p class="associations-description-content-left">Café-asso La Cabane, une association née en 2017, ayant pour objectif de promouvoir le vivre-ensemble, la solidarité, la transmission de savoirs,valoriser les acteurs locaux et l’économie responsable.</p></div>
-            <div><p class="associations-description-content-right">Racines de Demain, à l’origine du projet, une association née en 2019, ayant pour objectif d’accompagner les citoyens dans la transition écologique à travers de nouveaux récits.</p></div>
-            <div><p class="associations-description-content-left">La Vallée des Utopies, une association née en 2010, ayant pour but de réunir des personnes souhaitant participer au développement solidaire local par la culture.</p></div>
-            <div><p class="associations-description-content-right">Unis Vers Écolo, une association née en 2021, ayant pour objet de faire vivre l'écologie sur Champagne-sur-Oise et ses alentours.</p></div>
+            <div><p class="associations-description-content-left"><a href="https://cafeassolacabane.assoc.eu/" target="_blank" class="asso-link">Café-asso La Cabane</a>, une association née en 2017, ayant pour objectif de promouvoir le vivre-ensemble, la solidarité, la transmission de savoirs,valoriser les acteurs locaux et l’économie responsable.</p></div>
+            <div><p class="associations-description-content-right"><a href="https://www.racinesdedemain.com/" target="_blank" class="asso-link">Racines de demain</a>, à l’origine du projet, une association née en 2019, ayant pour objectif d’accompagner les citoyens dans la transition écologique à travers de nouveaux récits.</p></div>
+            <div><p class="associations-description-content-left"><a href="http://vallee.des.utopies.free.fr/" target="_blank" class="asso-link">La vallée des utopies</a>, une association née en 2010, ayant pour but de réunir des personnes souhaitant participer au développement solidaire local par la culture.</p></div>
+            <div><p class="associations-description-content-right"><a href="https://unisversecolo.fr/" target="_blank" class="asso-link">Unis vers écolo</a>, une association née en 2021, ayant pour objet de faire vivre l'écologie sur Champagne-sur-Oise et ses alentours.</p></div>
         </div>
     </section>
     <section class="partners-container">
         <h3 class="partners-container-title">Nos partenaires</h3>
         <div class="partners-logo-container">
-            <div><img src="/images/logo-champagne.png" alt=""></div>
-            <div><img src="/images/logo-idf.png" alt=""></div>
-            <div><img src="/images/logo-valdoise.png" alt=""></div>
-            <div><img src="/images/logo-pnrvexin.png" alt=""></div>
+            <div><img class="partner-logo" src="/images/logo-champagne.png" alt=""></div>
+            <div><img class="partner-logo" src="/images/logo-idf.png" alt=""></div>
+            <div><img class="partner-logo-big" src="/images/logo-valdoise.png" alt=""></div>
+            <div><img class="partner-logo-big" src="/images/logo-pnrvexin.png" alt=""></div>
         </div>
 
     </section>
+    <div class="partner-call-to-action-container">
+        <a href="/agenda" class="history-call-to-action">Toute la programmation</a>
+    </div>
 </Layout>
 <style>
     .project-header-container {
@@ -186,7 +189,22 @@ import Layout from '../layouts/ContentPage.astro';
         margin-top: 40px;
         margin-right: 20px;
     }
-
+    .asso-link {
+        text-decoration: underline;
+    }
+    .partner-logo {
+        width: 260px;
+    }
+    .partner-logo-big {
+        width: 160px;
+    }
+    .partner-call-to-action-container {
+        margin-top: 50px;
+        margin-bottom: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
 
     @media (max-width: 1000px) {

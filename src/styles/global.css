@@ -196,7 +196,7 @@ hr {
 .call-to-action-container {
 	position: absolute;
 	top: 70%;
-	left: 50%;
+	left: 54%;
 	transform: translate(-50%, -50%);
 	width: 506px;
 	margin: auto;
@@ -213,7 +213,7 @@ hr {
 	padding:6px 0px;
 	margin: 10px;
 	text-decoration:none;
-	width: 230px;
+	width: 180px;
 	text-align: center;
 }
 .call-to-action:hover {

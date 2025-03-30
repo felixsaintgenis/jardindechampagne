@@ -59,7 +59,7 @@ import Accordeon from '../components/Accordeon.astro';
 </section>
 <section class="faq-container">
     <h3 class="title">FAQ</h3>
-    <div class="flex flex-wrap items-start my-20">
+    <div class="flex flex-wrap items-start my-12">
         <Accordeon title="Quels sont vos horaires d'ouverture ?" details="Nous sommes ouverts lors des ventes de légumes sur place le vendredi de 16h à 20h, ainsi que le lundi pour la récupération des paniers achetés en ligne. Le jardin est également accessible lors de nos différents événements et activités. En dehors de ces horaires, vous êtes toujours les bienvenus pour venir dire bonjour, échanger et visiter les lieux, tant qu’un responsable est présent sur place."/>
         <Accordeon title="Comment puis-je contribuer ou soutenir le tiers-lieu ?" details="Le jardin a régulièrement besoin d’aide pour le maraîchage, ainsi que pour divers projets de construction et de bricolage. Pour participer, il vous suffit de rejoindre le groupe WhatsApp des bénévoles afin d’être informé des différentes opportunités. Vous pouvez également nous soutenir en achetant nos légumes lors des ventes, contribuant ainsi au développement de notre activité maraîchère tout en vous régalant. Si vous ne pouvez pas nous aider sur le terrain, vous avez aussi la possibilité de soutenir le jardin financièrement en faisant un don via HelloAsso."/>
         <Accordeon title="Les activités que vous proposées sont-elles payantes ?" details="Cela dépend des activités. Il est possible qu’une adhésion annuelle (10€) vous soit demandée afin de profiter d’un service à l’année. En revanche, beaucoup d’animations sont gratuites comme par exemple nos 2 fêtes annuelles que sont la Fête du Printemps et la Fête de l’Automne."/>
@@ -172,11 +172,11 @@ import Accordeon from '../components/Accordeon.astro';
 		width: 19px;
 	}
     .acces-photo {
-        width: 1200px;
+        width: 1300px;
         height: 600px;
         background-image: url('/images/plan-acces.jpg');
         background-size: cover;
-        margin: 50px auto;
+        margin-top: 50px;
     }
     .go-there-container-title {
         font-size: 40px;
@@ -187,6 +187,7 @@ import Accordeon from '../components/Accordeon.astro';
     }
     .go-there-content-container {
         display: flex;
+        align-items: center;
     }
     .go-there-content-left {
         width: 50%;
@@ -225,6 +226,9 @@ import Accordeon from '../components/Accordeon.astro';
         }
 }
 @media (max-width: 790px) {
+ .contact-header-container {
+    background-position: center;
+ }   
 .footer-section {
     width: 100%;
 }

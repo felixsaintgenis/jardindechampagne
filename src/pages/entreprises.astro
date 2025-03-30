@@ -19,19 +19,19 @@ import Layout from '../layouts/ContentPage.astro';
 <section class="company-workshop">
     <div class="company-workshop-container">
         <div class="kitchen-workshop">
-            <h4 class="workshop-title">Journée(s) Cuillette & assiette</h4>
+            <h4 class="workshop-title">Journée(s) <br /> Cuillette & assiette</h4>
             <div class="kitchen-picture"></div>
             <p class="">Un défi gourmand où plusieurs équipes devront, dans un temps imparti, se dépasser pour cueillir et cuisiner les produits du jardin, afin d’obtenir la meilleure note de leurs pairs après une dégustation collective.</p>
         </div>
         <div class="market-workshop">
-            <h4 class="workshop-title">Journée(s) Mains dans la terre</h4>
+            <h4 class="workshop-title">Journée(s) <br /> Mains dans la terre</h4>
             <div class="gardening-picture"></div>
             <p>Une Initation à la permaculture & au jardinage naturel offrant à vos collaborateurs l’opportunité de sortir de leur cadre habituel et de réaliser ensemble les gestes essemntiels à la production de légumes réellement bio.</p>
         </div>
     </div>
     <div class="enterprise-call-to-action-container">
         <a class="enterprise-call-to-action-black" href="">Demander un devis</a>
-        <a class="enterprise-call-to-action-black" href="">Découvrir notre plaquette</a>
+        <a class="enterprise-call-to-action-black" href="">Découvrir <br />notre plaquette</a>
     </div>
     <div class="seminar-photos">
         <div class="seminar-photo seminar-photo-1"></div>
@@ -75,6 +75,9 @@ import Layout from '../layouts/ContentPage.astro';
 </div>
 </Layout>
 <style>
+    .entreprise-page {
+        margin-bottom: 100px;
+    }
         .enterprise-header-container {
         position: relative;
 		height: 700px;
@@ -121,7 +124,7 @@ import Layout from '../layouts/ContentPage.astro';
         font-family:Arial;
         font-size:20px;
         padding:15px 0px;
-        margin: 10px;
+        margin: 20px;
         text-decoration:none;
         width: 150px;
         text-align: center;
@@ -165,14 +168,14 @@ import Layout from '../layouts/ContentPage.astro';
     }
     .kitchen-picture {
         width: 100%;
-        height: 500px;
+        height: 700px;
         background-image: url('/images/kitchen-picture.jpg');
         background-size: cover;
         margin-bottom: 50px;
     }
     .gardening-picture {
         width: 100%;
-        height: 500px;
+        height: 700px;
         background-image: url('/images/gardening-picture.jpg');
         background-size: cover;
         margin-bottom: 50px;
@@ -230,6 +233,7 @@ import Layout from '../layouts/ContentPage.astro';
     .verbatim-title {
         font-size: 40px;
         font-weight: 300;
+        margin-bottom: 30px;
     }
     .verbatim-content-container {
         display: flex;
@@ -259,7 +263,7 @@ import Layout from '../layouts/ContentPage.astro';
         margin-top: 50px;
     }
     .partner-logo {
-        width: 280px;
+        width: 200px;
     }
 
     @media (max-width: 1100px) {
@@ -306,6 +310,9 @@ import Layout from '../layouts/ContentPage.astro';
         .partners-logo-container > div {
             margin-top: 30px;
         }
+        .partner-logo {
+        width: 150px;
+    }
     }        
     @media (max-width: 390px) {
         .kitchen-picture, .gardening-picture {
