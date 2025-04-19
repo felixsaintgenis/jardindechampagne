@@ -36,6 +36,8 @@ export interface TypeArticleFields {
   tags?: EntryFieldTypes.Text;
   coverImage?: EntryFieldTypes.AssetLink;
   slug?: EntryFieldTypes.Symbol;
+  date?: EntryFieldTypes.Text;
+  hours?: EntryFieldTypes.Text;
 }
 
 export type TypeArticleSkeleton = EntrySkeletonType<TypeArticleFields, "articles">;

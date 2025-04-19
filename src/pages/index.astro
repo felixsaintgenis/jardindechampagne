@@ -31,13 +31,15 @@ const articlesEntries = await contentfulClient.withoutUnresolvableLinks.getEntri
 });
 
 const articles = articlesEntries.items.map((item) => {
-  const { title, tags, coverImage, slug, body } = item.fields;
+  const { title, tags, coverImage, slug, body, date, hours } = item.fields;
   return {
     title,
 	tags,
 	coverImage,
 	body,
     slug,
+	date,
+	hours
   };
 });
 
@@ -127,6 +129,8 @@ const articlesToDisplay = articles.slice(0,4)
 							>
 								<div class="overlay"></div>
 								<a href={`/blog/${post.slug}/`}>
+								<span class="event-date">{post.date}</span>
+								<span class="event-hour">{post.tags}</span>
 								<h2 class="event-item-title">{post.title}</h2>
 								</a>
 								{/* <p>{post.shortDescription}</p> */}
@@ -526,7 +530,13 @@ const articlesToDisplay = articles.slice(0,4)
 	}
 	.masonry-right-bottom-left {
 		margin-right: 0;
-	}	   		   	
+	}	   
+	.event-date, .event-hour {
+        font-size: 11px;
+	}		
+	.all-events-button {
+	left: 48%;
+}   	
     }   
 @media (max-width: 390px) {
 	.event-item {
@@ -540,5 +550,8 @@ const articlesToDisplay = articles.slice(0,4)
 	.header-title {
 		width: 355px;
 }	   		
+.event-item-title {
+		font-size: 13px;
+	}
     }
 </style>

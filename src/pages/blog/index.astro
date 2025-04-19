@@ -8,16 +8,18 @@ const eventEntries = await contentfulClient.withoutUnresolvableLinks.getEntries<
 });
 
 const events = eventEntries.items.map((item) => {
-  const { title, coverImage, slug, body } = item.fields;
+  const { title, coverImage, slug, body, date, tags } = item.fields;
   return {
     title,
 	coverImage,
 	body,
-    slug
+    slug,
+    date,
+    tags
   };
 });
 
-const tags = ['tout', 'vente de légumes', 'repair café', 'cinéma', 'temps de bénévolat', 'tables champêtres', 'café associatif']
+// const tags = ['tout', 'vente de légumes', 'repair café', 'cinéma', 'temps de bénévolat', 'tables champêtres', 'café associatif']
 ---
 
 <Layout
@@ -57,6 +59,8 @@ const tags = ['tout', 'vente de légumes', 'repair café', 'cinéma', 'temps de 
                 style={ post.coverImage && post.coverImage.fields && post.coverImage.fields.file ? { backgroundImage:'url(' + post.coverImage.fields.file.url + ')' } : {}}
                 >
                     <a href={`/blog/${post.slug}/`}>
+                    <span class="event-date">{post.date}</span>
+                    <span class="event-hour">{post.tags}</span>
                     <h2 class="event-item-title">{post.title}</h2>
                     </a>
                     {/* <p>{post.shortDescription}</p> */}
@@ -143,6 +147,22 @@ const tags = ['tout', 'vente de légumes', 'repair café', 'cinéma', 'temps de 
 	text-decoration:none;
 	width: 230px;
 }
+.event-date {
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding: 10px;
+		color: #ffffff;
+		font-size: 16px;
+	}
+	.event-hour {
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding: 10px;
+		color: #ffffff;
+		font-size: 16px;
+	}
 @media (max-width: 1300px) {
 	.event-item {
 			width: 48%;
@@ -173,16 +193,22 @@ const tags = ['tout', 'vente de légumes', 'repair café', 'cinéma', 'temps de 
     }   
     @media (max-width: 790px) {
 	.blog-section {
-        padding: 30px
+        padding: 30px 10px
 		}
         .blog-section h1 {
         font-size: 30px;
 		}
+        .event-date, .event-hour {
+        font-size: 11px;
+	}
 }	   	    
 @media (max-width: 390px) {
 	.event-item {
 		width: 45.3%;
 		height: 200px;
 		}
+        .event-item-title {
+		font-size: 13px;
+	}
 }	   		
 </style>

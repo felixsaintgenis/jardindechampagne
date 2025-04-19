@@ -45,7 +45,14 @@ import HeaderLink from './HeaderLink.astro';
 				  </a>
 				  <ul id="mobile-menu" class="mobile-navigation">
 					<li class="mobile-menu-item"><a href="/agenda">Agenda</a></li>
-					<li class="mobile-menu-item"><a href="">Participer</a></li>
+					<li class="mobile-menu-item"><a>Participer</a></li>
+						<ul class="mobile-submenu">
+							<li class="mobile-subnavigation-item"><a href="/entreprises">Organiser un teambuilding</a></li>
+							<li class="mobile-subnavigation-item"><a href="/scolaires">Venir avec sa classe</a></li>
+							<li class="mobile-subnavigation-item"><a href="/benevoles">S'impliquer dans le projet</a></li>
+							<li class="mobile-subnavigation-item"><a href="/ventes">Ventes de légumes</a></li>
+							<li class="mobile-subnavigation-item"><a href="https://www.helloasso.com/associations/racines-de-demain">Faire un don</a></li>
+						</ul>
 					<li class="mobile-menu-item"><a href="/projet">Projet</a></li>
 					<li class="mobile-menu-item"><a href="/blog">Actualités</a></li>
 					<li class="mobile-menu-item"><a href="/contact">Contact</a></li>
@@ -187,7 +194,7 @@ import HeaderLink from './HeaderLink.astro';
 	width: 100%;
 	background-color: #FFF6E5;
 	text-align: center;
-	padding: 110px;
+	padding: 110px 0;
 }
 .mobile-menu-item {
 	font-size: 30px;
