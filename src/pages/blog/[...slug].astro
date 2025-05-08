@@ -12,16 +12,19 @@ export async function getStaticPaths() {
   const options = {
   renderNode: {
     [BLOCKS.PARAGRAPH]: (node, next) => (
-      `<p style="font-size: 20px; margin-bottom:50px">${next(node.content)}</p>`
+      `<p class="rich-editor-paragraph">${next(node.content)}</p>`
+    ),
+    [BLOCKS.LIST_ITEM]: (node, next) => (
+      `<li class="rich-editor-list">${next(node.content)}</li>`
     ),
     [BLOCKS.HEADING_1]: (node, next) => (
-      `<h1 style="font-size: 30px; margin-bottom:20px">${next(node.content)}</h1>`
+      `<h1 style="font-size: 30px; margin-top:40px; margin-bottom:20px">${next(node.content)}</h1>`
     ),
     [BLOCKS.HEADING_2]: (node, next) => (
-      `<h2 style="font-size: 25px; margin-bottom:20px">${next(node.content)}</h2>`
+      `<h2 style="font-size: 25px; margin-top:40px; margin-bottom:20px">${next(node.content)}</h2>`
     ),
     [BLOCKS.HEADING_3]: (node, next) => (
-      `<h3 style="font-size: 22px; margin-bottom:20px">${next(node.content)}</h3>`
+      `<h3 style="font-size: 22px; margin-top:40px; margin-bottom:20px">${next(node.content)}</h3>`
     ),
     [BLOCKS.EMBEDDED_ASSET]: (node: any) => {
         const { file, title } = node.data.target.fields;
@@ -75,5 +78,12 @@ const { body, title, coverImage } = Astro.props;
         height: 100%;
         background-color: #000000;
         opacity: 20%;
+    }
+    .rich-editor-list p {
+      margin-bottom: 0 !important;
+    }
+    .rich-editor-paragraph {
+      font-size: 20px;
+      margin-bottom: 50px;
     }
 </style>

@@ -9,6 +9,7 @@ const eventEntries = await contentfulClient.withoutUnresolvableLinks.getEntries<
 
 const events = eventEntries.items.map((item) => {
   const { title, date, hours, shortDescription, coverImage, slug, body, type } = item.fields;
+  console.log('coucou', type)
   return {
     title,
 	date,
@@ -20,8 +21,6 @@ const events = eventEntries.items.map((item) => {
     type
   };
 });
-
-const tags = ['tout', 'vente de légumes', 'repair café', 'cinéma', 'temps de bénévolat', 'tables champêtres', 'café associatif']
 ---
 
 <Layout
@@ -43,21 +42,21 @@ const tags = ['tout', 'vente de légumes', 'repair café', 'cinéma', 'temps de 
             <h1 class="header-title">Vente, café asso, concert, bénévolat ou encore cinéma...<br />Des activités pour tous</h1>
         </div>
         <section class="events-lists-container">
-            <!-- <div class="tags-filter flex flex-wrap items-center gap-6">
-                {tags.map((tag) => {
-                    return (
-                <a 
-                class="tag"
-                >
-                    {tag}
-                </a>
-                )})}
-            </div> -->
-            <ul class="events-list flex flex-wrap mt-20 gap-8">
+            <div class="tags-filter flex flex-wrap items-center gap-6 mt-20">
+                <a class="tag" data-filter="tout">Tout</a>
+                <a class="tag" data-filter="tables champêtres">Table champêtre</a>
+                <a class="tag" data-filter="café associatif">Café associatif</a>
+                <a class="tag" data-filter="vente de légumes">Vente de légumes</a>
+                <a class="tag" data-filter="repair café">Repair café</a>
+                <a class="tag" data-filter="temps de bénévolat">Temps de bénévolat</a>
+                <a class="tag" data-filter="évènements saisonniers">Évènements saisonniers</a>
+            </div>
+            <ul class="events-list flex flex-wrap mt-8 gap-8">
                 {events.map((post) => {
                     return (
                 <li 
                 class="event-item"
+                data-category={post.type}
                 style={ post.coverImage && post.coverImage.fields && post.coverImage.fields.file ? { backgroundImage:'url(' + post.coverImage.fields.file.url + ')' } : {}}
                 >
                     <a href={`/agenda/${post.slug}/`}>
@@ -165,6 +164,9 @@ const tags = ['tout', 'vente de légumes', 'repair café', 'cinéma', 'temps de 
 	margin: 10px;
 	text-decoration:none;
 }
+.active {
+    font-weight: bold;
+  }
 @media (min-width: 790px) {
 	.header-title {
 				width: 800px;
@@ -215,3 +217,25 @@ const tags = ['tout', 'vente de légumes', 'repair café', 'cinéma', 'temps de 
 	}
 }	   		
 </style>
+
+<script type="module">
+    const buttons = document.querySelectorAll('[data-filter]');
+    const items = document.querySelectorAll('.event-item');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const filter = button.getAttribute('data-filter');
+        buttons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        items.forEach(item => {
+          const category = item.getAttribute('data-category');
+          if (filter === 'tout' || category === filter) {
+            item.style.display = '';
+            button.style
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>

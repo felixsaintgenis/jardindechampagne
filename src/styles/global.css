@@ -219,6 +219,13 @@ hr {
 .call-to-action:hover {
 	border:2px solid #FFFFFF;
 }
+.rich-editor-paragraph {
+	font-size: 20px;
+	margin-bottom: 20px ;
+  }
+.rich-editor-list p {
+	margin-bottom: 0px ;
+  }
 @media (max-width: 1300px) {
 	.header-section {
 		width: 100%;
