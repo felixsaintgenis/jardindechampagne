@@ -14,20 +14,33 @@ export async function getStaticPaths() {
     [BLOCKS.PARAGRAPH]: (node, next) => (
       `<p style="font-size: 20px">${next(node.content)}</p>`
     ),
+    [BLOCKS.LIST_ITEM]: (node, next) => (
+      `<li class="rich-editor-list">${next(node.content)}</li>`
+    ),
     [BLOCKS.HEADING_1]: (node, next) => (
-      `<h1 style="font-size: 30px">${next(node.content)}</h1>`
+      `<h1 style="font-size: 30px; margin-top:40px; margin-bottom:20px">${next(node.content)}</h1>`
+    ),
+    [BLOCKS.HEADING_2]: (node, next) => (
+      `<h2 style="font-size: 27px; margin-top:40px; margin-bottom:20px">${next(node.content)}</h2>`
+    ),
+    [BLOCKS.HEADING_3]: (node, next) => (
+      `<h3 style="font-size: 20px; margin-top:40px; margin-bottom:20px">${next(node.content)}</h3>`
     ),
     [BLOCKS.EMBEDDED_ASSET]: (node: any) => {
         const { file, title } = node.data.target.fields;
-        return (
-          `<img
-            src=${file.url}
-            alt="Contentful Image"
-            class="rounded-lg shadow-md mx-auto my-4"
-            loading="lazy"
-          />`
-      
-  )}
+        if (file.contentType.startsWith('image/')) {
+          return `<img src="${file.url}" alt="${title}" style="max-width: 100%; height: auto;" />`;
+        }
+
+        if (file.contentType.startsWith('video/')) {
+          return `<video controls width="100%">
+                    <source src="${file.url}" type="${file.contentType}">
+                    Your browser does not support the video tag.
+                  </video>`;
+        }
+
+        return '';
+      },
 },
 };
   const pages = items.map((item) => ({

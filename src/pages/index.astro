@@ -108,12 +108,20 @@ const articlesToDisplay = articles.slice(0,4)
 				<section class="participation-section">
 					<h3 class="participation-title">Participer à la vie du lieu</h3>
 					<div class="masonry-container">
-						<div class="masonry-left"><a href="/entreprises">Pour les entreprises</a></div>
+						<div class="masonry-left">
+							<div class="overlay"></div>
+							<a class="masonry-title" href="/entreprises">Pour les entreprises</a></div>
 						<div class="masonry-right">
-							<div class="masonry-right-top"><a href="/scolaires">Pour la jeunesse</a></div>
+							<div class="masonry-right-top">
+								<div class="overlay"></div>
+								<a class="masonry-title" href="/scolaires">Pour la jeunesse</a></div>
 							<div class="masonry-right-bottom">
-								<div class="masonry-right-bottom-left"><a href="/benevoles">Devenir bénévole</a></div>
-								<div class="masonry-right-bottom-right"><a href="https://www.helloasso.com/associations/racines-de-demain" target="_blank">Faire un don</a></div>
+								<div class="masonry-right-bottom-left">
+									<div class="overlay"></div>
+									<a class="masonry-title" href="/benevoles">Devenir bénévole</a></div>
+								<div class="masonry-right-bottom-right">
+									<div class="overlay"></div>
+									<a class="masonry-title" href="https://www.helloasso.com/associations/racines-de-demain" target="_blank">Faire un don</a></div>
 							</div>
 						</div>
 					</div>
@@ -150,7 +158,7 @@ const articlesToDisplay = articles.slice(0,4)
 <style>
 
 .main-header {
-	background-image: url('/images/jardindechampagne.jpg');
+	background-image: url('/images/jardindechampagne.webp');
 }
 .index-button {
 	color: #FFF6E5;
@@ -343,7 +351,21 @@ const articlesToDisplay = articles.slice(0,4)
 .masonry-container a:hover {
 	cursor: pointer;
 }
+.masonry-title {
+	z-index: 0;
+}
+.overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #000000;
+        opacity: 20%;
+    }
 .masonry-left {
+	position: relative;
+	background-image: url('/images/pourlesentreprises.webp');
+	background-position: center;
+	background-size: cover;
 	display: flex;
 	justify-content: center;
   	align-items: center;
@@ -360,6 +382,10 @@ const articlesToDisplay = articles.slice(0,4)
 	margin-left: 20px;
 }
 .masonry-right-top {
+	position: relative;
+	background-image: url('/images/school-header-picture.jpg');
+	background-position: center;
+	background-size: cover;
 	display: flex;
 	justify-content: center;
   	align-items: center;
@@ -370,11 +396,16 @@ const articlesToDisplay = articles.slice(0,4)
 	background-color: #7FA267;
 }
 .masonry-right-bottom {
+	position: relative;
 	display: flex;
 	height: 300px;
 	margin-top: 20px;
 }
 .masonry-right-bottom-left {
+	background-image: url('/images/benevoles.jpg');
+	background-size: cover;
+	background-position: center;
+	position: relative;
 	display: flex;
 	justify-content: center;
   	align-items: center;
@@ -385,6 +416,10 @@ const articlesToDisplay = articles.slice(0,4)
 	background-color: #7FA267;
 }
 .masonry-right-bottom-right {
+	background-image: url('/images/don.jpg');
+	background-size: cover;
+	background-position: center;
+	position: relative;
 	display: flex;
 	justify-content: center;
   	align-items: center;
