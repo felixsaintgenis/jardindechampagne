@@ -24,6 +24,10 @@ jobs:
 
       - name: Build project
         run: npm run build
+        env:
+          CONTENTFUL_SPACE_ID: ${{ secrets.CTFL_SPACE }}
+          CONTENTFUL_DELIVERY_TOKEN: ${{ secrets.CTFL_ACCESSTOKEN }}
+
 
       - name: Deploy to FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
