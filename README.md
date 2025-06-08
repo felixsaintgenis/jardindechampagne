@@ -59,6 +59,36 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
+## 🔄 GitHub Actions Workflow
+
+This project includes a GitHub Actions workflow that automatically builds the project and deploys it to an FTP server when changes are pushed to the main branch.
+
+### Setting up the GitHub Secrets
+
+For security reasons, the FTP connection details are not hardcoded in the workflow file. Instead, they use GitHub secrets. To set up these secrets:
+
+1. Go to your GitHub repository
+2. Click on "Settings" > "Secrets and variables" > "Actions"
+3. Click on "New repository secret"
+4. Set up the following secrets:
+   - Name: `ovh_url`
+     Value: Enter your FTP server URL
+   - Name: `ovh_user`
+     Value: Enter your FTP username
+   - Name: `ovh_password`
+     Value: Enter your FTP password
+5. Click "Add secret" for each
+
+### FTP Deployment Configuration
+
+The workflow is configured to deploy to an FTP server using the following environment variables:
+- FTP Server: Stored in the `ovh_url` secret
+- Username: Stored in the `ovh_user` secret
+- Password: Stored in the `ovh_password` secret
+- Directory: The root directory of your FTP server
+
+You can modify these settings in the `.github/workflows/publish-prod.yml` file.
+
 ## 👀 Want to learn more?
 
 Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
