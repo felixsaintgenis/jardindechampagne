@@ -36,4 +36,4 @@ jobs:
           username: ${{ secrets.OVH_USER }}
           password: ${{ secrets.OVH_PASSWORD }}
           local-dir: ./dist/
-          server-dir: ./www
+          server-dir: ./www/
