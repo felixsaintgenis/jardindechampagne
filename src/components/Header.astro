@@ -1,9 +1,30 @@
 ---
 import HeaderLink from './HeaderLink.astro';
+
+const announcements = [
+	{
+		text: 'Fin des ventes pour la saison 2026',
+		href: '/'
+	},
+	{
+		text: 'Rejoignez le whatsapp du jardin pédagogique',
+		href: 'https://chat.whatsapp.com/DuATFm5047r0zYGlPuQwKV'
+	},
+	{
+		text: 'Découvrez l\'agenda de la Cabane pour Janvier',
+		href: '/blog/programme-du-cafe-asso-la-cabane-pour-janvier/'
+	}
+];
 ---
 
 <header id="header">
-	<a class="announcement-bar" href="/agenda/vente-de-legumes/">Fin des ventes pour la saison 2026</a>
+	<div class="announcement-container">
+		{announcements.map((announcement, index) => (
+			<a class="announcement-bar" href={announcement.href} data-index={index}>
+				{announcement.text}
+			</a>
+		))}
+	</div>
 	<div class="top-banner">
 		<a href="https://www.helloasso.com/associations/racines-de-demain" target="_blank" class="top-banner-link">Faire un don</a>
 		<span class="banner-divider">|</span>
@@ -61,6 +82,13 @@ import HeaderLink from './HeaderLink.astro';
 		</nav>
 </header>
 <style>
+.announcement-container {
+	position: relative;
+	width: 100%;
+	height: 30px;
+	overflow: hidden;
+}
+
 .announcement-bar {
 	background-color: #7FA267;
 	color: #FFFFFF;
@@ -70,7 +98,17 @@ import HeaderLink from './HeaderLink.astro';
 	justify-content: center;
 	align-items: center;
 	font-size: 16px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: opacity 0.5s ease-in-out;
+	opacity: 0;
+	pointer-events: none;
+}
 
+.announcement-bar.active {
+	opacity: 1;
+	pointer-events: auto;
 }	
 	#mobile-menu {
 	display: none;
@@ -226,6 +264,18 @@ import HeaderLink from './HeaderLink.astro';
 document.addEventListener("astro:page-load", () => {	
 	const burgerMenu = document.getElementById("burgerMenu");
 	const mobileMenu = document.getElementById("mobile-menu");
+	const announcementBars = document.querySelectorAll(".announcement-bar");
+
+	// Announcement rotation
+	let currentAnnouncementIndex = 0;
+	if (announcementBars.length > 0) {
+		announcementBars[0].classList.add("active");
+		setInterval(() => {
+			announcementBars[currentAnnouncementIndex].classList.remove("active");
+			currentAnnouncementIndex = (currentAnnouncementIndex + 1) % announcementBars.length;
+			announcementBars[currentAnnouncementIndex].classList.add("active");
+		}, 5000); // Change announcement every 5 seconds
+	}
 
 	burgerMenu.addEventListener("click", () => toggleMenu());
 
