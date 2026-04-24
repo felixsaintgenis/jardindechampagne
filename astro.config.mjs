@@ -10,4 +10,5 @@ export default defineConfig({
     output: 'static',
     site: 'https://jardindechampagne.com',
     integrations: [mdx(), sitemap(), tailwind()],
+    viewTransitions: true,
 });
