@@ -46,6 +46,11 @@ const today = new Date();
 		<p class="footer-section-text">Nogent à l'Isle-Adam : samedi de 9h à 12h</p>
 		<p class="footer-section-text">Click & Collect : Lundi de 17h à 18h</p>
 	</div>
+	<div class="footer-logo-container">
+		<a href="/" aria-label="Accueil">
+			<img src="/images/logobpe.jpg" alt="Logo Jardin de Champagne" class="footer-logo">
+		</a>
+	</div>
 </footer>
 <style>
 	footer {
@@ -57,9 +62,20 @@ const today = new Date();
 		width: 1200px;
 		margin: auto;
 	}
+	.footer-logo-container {
+		width: 100%;
+		display: flex;
+		justify-content: flex-start;
+		margin-top: 20px;
+	}
+	.footer-logo {
+		display: block;
+		max-width: 180px;
+		height: auto;
+	}
 	.footer-section {
 		width: 25%;
-		text-align: left;
+		ext-align: left;
 	}
 	.footer-navigation-list {
 		padding-left: 0;
@@ -138,6 +154,9 @@ const today = new Date();
 			width: 100%;
 			margin-top: 30px;
 			text-align: center;
+		}
+		.footer-logo-container {
+			justify-content: center;
 		}
 		.footer-section-map-link-container {
 			justify-content: center;
